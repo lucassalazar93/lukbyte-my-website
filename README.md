@@ -1,12 +1,24 @@
-# React + Vite
+# Lukbyte – My Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the official website of **Lukbyte**, a digital solutions agency. Built with **React + Vite**, it provides a modern, smooth, and responsive user experience tailored for businesses that want to stand out.
 
-Currently, two official plugins are available:
+## 🔥 Features
+- Animated floating bee & custom mouse tracking
+- Responsive navbar and project showcase
+- Services section with hover effects
+- Customer testimonials with Framer Motion
+- Contact form integrated with EmailJS
+- Google Maps embedded
+- Newsletter subscription
+- Footer with social media and legal info
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Technologies
+- React 19+
+- Vite
+- EmailJS
+- CSS Modules / Custom styles
+- AOS & Framer Motion
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💡 Designed by
+**Lucas Salazar**  
+[📧 administracionlukbyte@gmail.com](mailto:administracionlukbyte@gmail.com)
