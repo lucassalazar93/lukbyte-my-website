@@ -1,0 +1,150 @@
+/* === CONTENEDOR STICKY CON SOMBRA Y SUAVIDAD === */
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* === NAVBAR BASE === */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #ffbb00, #ffaa00);
+  padding: 18px 48px;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar.shrink {
+  padding: 10px 32px;
+}
+
+/* === LOGO === */
+.navbar-logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.logo-luk {
+  color: #000;
+}
+.logo-byte {
+  color: #00bfff;
+}
+
+/* === MENU PRINCIPAL === */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  font-size: 1.1rem;
+  flex: 2;
+}
+.navbar-menu li a {
+  color: #0a0e1f;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+}
+.navbar-menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #00bfff;
+  transition: width 0.3s ease;
+}
+.navbar-menu li a:hover {
+  color: #00bfff;
+}
+.navbar-menu li a:hover::after {
+  width: 100%;
+}
+
+/* === BOTÓN COTIZACIÓN === */
+.navbar-cta {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.cotizar-btn {
+  background: #00bfff;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 191, 255, 0.3);
+  transition: all 0.3s ease;
+}
+.cotizar-btn:hover {
+  background: #fff9c4;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* === SVG MIEL CURVA === */
+.navbar-drip svg {
+  display: block;
+  width: 100%;
+  height: 54px;
+  margin-top: -1px;
+  pointer-events: none;
+  animation: dripWave 6s ease-in-out infinite alternate;
+}
+@keyframes dripWave {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(2px);
+  }
+}
+
+/* === HAMBURGER === */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0a0e1f;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #0a0e1f;
+    gap: 20px;
+    padding: 20px;
+    display: none;
+    text-align: center;
+  }
+
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  .navbar-menu li a {
+    color: white;
+  }
+
+  .navbar-cta {
+    display: none;
+  }
+}

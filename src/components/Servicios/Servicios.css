@@ -1,0 +1,153 @@
+/* Sección principal */
+.servicios-section {
+  background-color: #0b0d1a;
+  padding: clamp(60px, 10vh, 120px) 20px;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Título central */
+.servicios-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #ffffff;
+}
+
+/* Contenedor en grid responsivo */
+.servicios-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+/* Tarjeta de servicio con estructura vertical */
+.servicio-card {
+  background: #101223;
+  border-radius: 20px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+
+  /* ✅ Borde degradado igual a Proyectos y Testimonios */
+  border: 2px solid transparent;
+  background-image: linear-gradient(#101223, #101223),
+                    linear-gradient(135deg, #00bfff, #ffaa00);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+
+.servicio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 191, 255, 0.2);
+}
+
+/* Ícono del servicio */
+.servicio-icon {
+  width: 80px;
+  height: auto;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 0 6px #00bfff);
+}
+
+/* Título dentro de la tarjeta */
+.servicio-card h3 {
+  font-size: 1.3rem;
+  color: #00bfff;
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Descripción */
+.servicio-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: auto;
+  min-height: 100px; /* Fuerza altura igual en todas */
+  text-align: center;
+}
+
+/* Botón */
+.servicio-card button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid #00bfff;
+  border-radius: 25px;
+  padding: 10px 22px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.servicio-card button:hover {
+  background-color: #00bfff;
+  color: #0b0d1a;
+  box-shadow: 0 0 12px #00bfff;
+}
+
+/* 🐝 Abejas animadas decorativas */
+.abeja-servicio {
+  position: absolute;
+  width: 60px;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: flotar 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.bottom-right {
+  bottom: 30px;
+  right: 30px;
+}
+
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(5deg);
+  }
+}
+
+/* 📱 Mobile ajustes */
+@media (max-width: 480px) {
+  .servicio-card {
+    padding: 24px 18px;
+  }
+
+  .servicio-icon {
+    width: 55px;
+  }
+
+  .servicio-card p {
+    font-size: 0.9rem;
+  }
+
+  .servicio-card button {
+    width: 100%;
+  }
+
+  .abeja-servicio {
+    width: 38px;
+  }
+}
