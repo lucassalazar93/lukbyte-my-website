@@ -1,13 +1,14 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
+// Imágenes
 import abeja1 from '../../assets/abejas/abeja1.png';
 import abeja2 from '../../assets/abejas/abeja2.png';
 import logoLukbyte from '../../assets/logoLukbyte.png';
-
 import facebook from '../../assets/icons/facebook.png';
-import instagram from '../../assets/icons/instagram.png'; 
+import instagram from '../../assets/icons/instagram.png';
 import tiktok from '../../assets/icons/tiktok.png';
 
 export default function Footer() {
@@ -20,7 +21,10 @@ export default function Footer() {
         publicKey: 'TU_PUBLIC_KEY',
       })
       .then(
-        () => alert('Mensaje enviado con éxito'),
+        () => {
+          alert('Mensaje enviado con éxito');
+          form.current.reset();
+        },
         (error) => alert('Error al enviar el mensaje: ' + error.text)
       );
   };
@@ -34,19 +38,19 @@ export default function Footer() {
           <p>Soluciones digitales inteligentes para marcas que quieren destacar.</p>
         </div>
 
-        {/* Columna 2: Enlaces */}
+        {/* Columna 2: Enlaces de navegación desde cualquier página */}
         <div className="footer-col links">
           <h4>Enlaces</h4>
           <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#testimonios">Testimonios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><Link to="/?scrollTo=inicio">Inicio</Link></li>
+            <li><Link to="/?scrollTo=servicios">Servicios</Link></li>
+            <li><Link to="/?scrollTo=proyectos">Proyectos</Link></li>
+            <li><Link to="/?scrollTo=testimonios">Testimonios</Link></li>
+            <li><Link to="/?scrollTo=contacto">Contacto</Link></li>
           </ul>
         </div>
 
-        {/* Columna 3: Contacto y redes */}
+        {/* Columna 3: Información de contacto */}
         <div className="footer-col contacto">
           <h4>Contacto</h4>
           <ul>
@@ -54,21 +58,21 @@ export default function Footer() {
             <li>📞 +57 315 039 9322</li>
             <li>📧 administracionlukbyte@gmail.com</li>
             <li className="redes">
-              <a href="https://facebook.com" rel="noreferrer">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                 <img src={facebook} alt="Facebook" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                 <img src={instagram} alt="Instagram" />
               </a>
-              <a href="https://tiktok.com" target="_blank" rel="noreferrer">
+              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
                 <img src={tiktok} alt="TikTok" />
               </a>
             </li>
           </ul>
         </div>
 
-        {/* Columna 4: Formulario y boletín */}
-        <div className="footer-col formulario">
+        {/* Columna 4: Formulario de cotización y boletín */}
+        <div className="footer-col formulario" id="contacto">
           <h4>Solicita tu cotización</h4>
           <form ref={form} onSubmit={enviarCorreo}>
             <input type="text" name="user_name" placeholder="Nombre completo" required />
@@ -76,9 +80,10 @@ export default function Footer() {
             <textarea name="message" placeholder="¿Qué necesitas?" rows={3} required></textarea>
             <button type="submit">Enviar</button>
           </form>
+
           <div className="boletin">
             <p>Recibe tips y novedades exclusivas:</p>
-            <form>
+            <form onSubmit={(e) => e.preventDefault()}>
               <input type="email" placeholder="Tu correo" required />
               <button>Suscribirme</button>
             </form>
@@ -97,11 +102,12 @@ export default function Footer() {
         ></iframe>
       </div>
 
-      {/* Derechos legales */}
+      {/* Derechos legales y navegación legal */}
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} Lukbyte. Todos los derechos reservados.</p>
         <p>
-          <a href="/terminos">Términos y condiciones</a> | <a href="/privacidad">Política de privacidad</a>
+          <Link to="/terminos-y-condiciones">Términos y condiciones</Link> |{' '}
+          <Link to="/politica-de-privacidad">Política de privacidad</Link>
         </p>
         <p>Diseñado por <strong>Lucas Salazar</strong> 💡</p>
       </div>

@@ -1,0 +1,107 @@
+.terminos-container {
+  background: url('/images/bg-panal-oscuro.png'), #0a0e1f;
+  background-size: cover;
+  padding: 80px 20px;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+.terminos-content {
+  background-color: rgba(10, 14, 31, 0.95);
+  max-width: 900px;
+  margin: auto;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 191, 255, 0.1);
+}
+
+.terminos-content h1 {
+  font-size: 2.5rem;
+  color: #00c8ff;
+  text-shadow: 0 0 8px #00c8ff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.terminos-content h2 {
+  font-size: 1.4rem;
+  color: #00bfff;
+  text-shadow: 0 0 6px #00bfff;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+.terminos-content p,
+.terminos-content li {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.terminos-content ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.updated {
+  color: #aaa;
+  font-style: italic;
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.contacto {
+  text-align: center;
+  font-weight: bold;
+  color: #00bfff;
+  margin-top: 40px;
+}
+
+/* Abeja decorativa */
+.abeja-fixed {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  opacity: 0.9;
+  z-index: 1000;
+  animation: flotar 5s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .terminos-content {
+    padding: 30px 20px;
+  }
+
+  .terminos-content h1 {
+    font-size: 2rem;
+  }
+
+  .terminos-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .terminos-content p,
+  .terminos-content li {
+    font-size: 0.95rem;
+  }
+
+  .abeja-fixed {
+    width: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+}

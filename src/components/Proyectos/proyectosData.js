@@ -11,11 +11,11 @@ export const proyectos = [
   {
     img: sabor,
     titulo: "Sabor A Felicidad",
-    subtitulo: "",
+    subtitulo: "Cada Bocado, Una Inspiracion",
   },
   {
     img: barber,
     titulo: "Imperio Barber",
-    subtitulo: "",
+    subtitulo: "lujo Y Estilo En Un Solo lugar",
   }
 ];

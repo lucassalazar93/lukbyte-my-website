@@ -151,3 +151,27 @@
     width: 38px;
   }
 }
+
+.btn-ver-mas {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 2px solid #00bfff;
+  color: #00bfff;
+  background: transparent;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.btn-ver-mas:hover {
+  background: #00bfff;
+  color: #000;
+}
+
+.btn-ver-mas.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -11,13 +12,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleClick = () => setMenuOpen(false);
+
   return (
     <header className={`navbar-container ${scrolled ? "shrink" : ""}`}>
       <nav className="navbar">
         {/* Logo */}
         <div className="navbar-logo">
-          <span className="logo-luk">Luk</span>
-          <span className="logo-byte">byte</span>
+          <Link to="/?scrollTo=inicio" onClick={handleClick}>
+            <span className="logo-luk">Luk</span>
+            <span className="logo-byte">byte</span>
+          </Link>
         </div>
 
         {/* Botón hamburguesa */}
@@ -29,20 +34,33 @@ export default function Navbar() {
           ☰
         </button>
 
-        {/* Menú de navegación */}
+        {/* Menú de navegación con scroll desde cualquier ruta */}
         <ul className={`navbar-menu ${menuOpen ? "open" : ""}`}>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li>
+            <Link to="/?scrollTo=inicio" onClick={handleClick}>Inicio</Link>
+          </li>
+          <li>
+            <Link to="/?scrollTo=servicios" onClick={handleClick}>Servicios</Link>
+          </li>
+          <li>
+            <Link to="/?scrollTo=proyectos" onClick={handleClick}>Proyectos</Link>
+          </li>
+          <li>
+            <Link to="/?scrollTo=contacto" onClick={handleClick}>Contacto</Link>
+          </li>
         </ul>
 
-        {/* Botón de cotización */}
+        {/* Botón de acción principal */}
         <div className="navbar-cta">
-          <a href="#contacto" className="cotizar-btn">Solicitar cotización</a>
+          <Link
+            to="/?scrollTo=contacto"
+            className="cotizar-btn"
+            onClick={handleClick}
+          >
+            Solicitar cotización
+          </Link>
         </div>
       </nav>
-
     </header>
   );
 }
