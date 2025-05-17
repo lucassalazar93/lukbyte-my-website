@@ -22,20 +22,64 @@ export default function DesarrolloWeb() {
     window.scrollTo(0, 0);
   }, []);
 
+  const whatsapp = '573150399322';
+
+  const demoMessage = encodeURIComponent(
+    '¡Hola! Estoy interesada en una demo gratuita de sus servicios web. ¿Podemos agendar una? 💻'
+  );
+
+  const asesoriaMessage = encodeURIComponent(
+    '¡Hola! Quiero agendar una asesoría personalizada para el desarrollo de mi sitio web. 📅'
+  );
+
   return (
     <section className="desarrollo-container">
       {/* HERO */}
       <div className="hero-section">
-        <motion.img src={abeja1} alt="abeja" className="abeja-float top-left" animate={{ y: [0, -12, 0] }} transition={{ duration: 5, repeat: Infinity }} />
-        <motion.img src={abeja2} alt="abeja" className="abeja-float top-right" animate={{ y: [0, 12, 0] }} transition={{ duration: 6, repeat: Infinity }} />
-        <motion.img src={abeja3} alt="abeja" className="abeja-float bottom-left" animate={{ y: [0, -10, 0] }} transition={{ duration: 7, repeat: Infinity }} />
+        <motion.img
+          src={abeja1}
+          alt="abeja"
+          className="abeja-float top-left"
+          animate={{ y: [0, -12, 0] }}
+          transition={{ duration: 5, repeat: Infinity }}
+        />
+        <motion.img
+          src={abeja2}
+          alt="abeja"
+          className="abeja-float top-right"
+          animate={{ y: [0, 12, 0] }}
+          transition={{ duration: 6, repeat: Infinity }}
+        />
+        <motion.img
+          src={abeja3}
+          alt="abeja"
+          className="abeja-float bottom-left"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 7, repeat: Infinity }}
+        />
 
         <div className="hero-text">
           <h1>Creamos experiencias web únicas y funcionales</h1>
-          <p>Transformamos tus ideas en sitios web modernos, optimizados y listos para convertir.</p>
+          <p>
+            Transformamos tus ideas en sitios web modernos, optimizados y listos para convertir.
+          </p>
           <div className="hero-buttons">
-            <button className="btn-principal">🎥 Solicita una demo gratuita</button>
-            <button className="btn-secundario">📅 Agendar una asesoría</button>
+            <a
+              className="btn-principal"
+              href={`https://wa.me/${whatsapp}?text=${demoMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🎥 Solicita una demo gratuita
+            </a>
+            <a
+              className="btn-secundario"
+              href={`https://wa.me/${whatsapp}?text=${asesoriaMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📅 Agendar una asesoría
+            </a>
           </div>
         </div>
 
@@ -47,7 +91,10 @@ export default function DesarrolloWeb() {
       {/* BENEFICIOS */}
       <div className="beneficios-section">
         <h2>¿Por qué elegir desarrollo personalizado?</h2>
-        <p>En Lukbyte, no usamos plantillas genéricas. Diseñamos sitios desde cero, pensados para crecer contigo y diferenciarte en lo digital.</p>
+        <p>
+          En Lukbyte, no usamos plantillas genéricas. Diseñamos sitios desde cero, pensados para
+          crecer contigo y diferenciarte en lo digital.
+        </p>
         <ul className="beneficios-lista">
           <li>✅ SEO desde el primer código</li>
           <li>✅ Rendimiento óptimo y mobile-first</li>
@@ -67,9 +114,16 @@ export default function DesarrolloWeb() {
             { icon: '🎨', title: 'Diseño visual personalizado' },
             { icon: '💻', title: 'Desarrollo front y backend' },
             { icon: '🧪', title: 'QA, optimización y SEO' },
-            { icon: '🚀', title: 'Entrega y acompañamiento' }
+            { icon: '🚀', title: 'Entrega y acompañamiento' },
           ].map((paso, i) => (
-            <motion.div key={i} className="proceso-item" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.2 }}>
+            <motion.div
+              key={i}
+              className="proceso-item"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.2 }}
+            >
               <div className="proceso-icon">{paso.icon}</div>
               <p>{paso.title}</p>
             </motion.div>
@@ -88,7 +142,8 @@ export default function DesarrolloWeb() {
               nombre: 'Panadería VIP',
               tecnologias: 'React · Tailwind · Firebase',
               resultado: '+60% pedidos online en el primer mes',
-              testimonio: 'Lukbyte nos diseñó una tienda que transmite nuestra esencia. Ahora vendemos 24/7.'
+              testimonio:
+                'Lukbyte nos diseñó una tienda que transmite nuestra esencia. Ahora vendemos 24/7.',
             },
             {
               portada: portadaNaturista,
@@ -96,7 +151,8 @@ export default function DesarrolloWeb() {
               nombre: 'Tienda Natural Belleza',
               tecnologias: 'React · Firebase',
               resultado: '+40% tráfico en 30 días',
-              testimonio: 'Gracias a Lukbyte lanzamos nuestra tienda en 15 días. Las clientas aman el diseño.'
+              testimonio:
+                'Gracias a Lukbyte lanzamos nuestra tienda en 15 días. Las clientas aman el diseño.',
             },
             {
               portada: portadaInspira,
@@ -104,16 +160,27 @@ export default function DesarrolloWeb() {
               nombre: 'Cursos Inspira',
               tecnologias: 'WordPress · Stripe',
               resultado: 'Automatización de pagos y matrícula',
-              testimonio: 'Me ayudaron a escalar mi academia digital con eficiencia y estética.'
-            }
+              testimonio: 'Me ayudaron a escalar mi academia digital con eficiencia y estética.',
+            },
           ].map((proy, i) => (
-            <motion.div key={i} className="proyecto-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.2 }}>
+            <motion.div
+              key={i}
+              className="proyecto-card"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.2 }}
+            >
               <div className="proyecto-imgs">
                 <Zoom>
                   <img src={proy.portada} alt={`${proy.nombre} portada`} className="proyecto-img" />
                 </Zoom>
                 <Zoom>
-                  <img src={proy.interno} alt={`${proy.nombre} interior`} className="proyecto-img interior" />
+                  <img
+                    src={proy.interno}
+                    alt={`${proy.nombre} interior`}
+                    className="proyecto-img interior"
+                  />
                 </Zoom>
               </div>
               <h3>{proy.nombre}</h3>
@@ -143,7 +210,10 @@ export default function DesarrolloWeb() {
           </details>
           <details>
             <summary>¿Qué necesito tener para comenzar?</summary>
-            <p>Solo tu idea, referencias visuales si tienes, y contenido inicial. Nosotros guiamos el resto.</p>
+            <p>
+              Solo tu idea, referencias visuales si tienes, y contenido inicial. Nosotros guiamos el
+              resto.
+            </p>
           </details>
         </div>
       </section>
@@ -152,10 +222,22 @@ export default function DesarrolloWeb() {
       <section className="cta-final">
         <h2>¿Listo para transformar tu presencia online?</h2>
         <div className="cta-botones">
-          <a href="https://wa.me/573001112233?text=Hola%20Lukbyte,%20quiero%20una%20demo%20gratuita!" target="_blank" rel="noreferrer" className="btn-principal">
-            💬 Escríbenos por WhatsApp
+          <a
+            href={`https://wa.me/${whatsapp}?text=${demoMessage}`}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-principal"
+          >
+            💬 Solicitar demo gratuita
           </a>
-          <button className="btn-secundario">📅 Agenda tu asesoría</button>
+          <a
+            href={`https://wa.me/${whatsapp}?text=${asesoriaMessage}`}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-secundario"
+          >
+            📅 Agendar asesoría
+          </a>
         </div>
       </section>
     </section>

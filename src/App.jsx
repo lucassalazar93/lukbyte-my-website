@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ScrollToSection from './utils/ScrollToSection'; // ✅ nuevo
+import ScrollToSection from './utils/ScrollToSection';
 
 // 🐝 Elementos globales
 import AbejaSeguidora from './components/AbejaSeguidora/AbejaSeguidora';
+import WidgetWhatsApp from './components/WidgetWhatsApp';
 
 // 🧭 Navegación principal
 import Navbar from './components/Navbar/Navbar';
@@ -11,7 +12,7 @@ import DesarrolloWeb from './pages/servicios/DesarrolloWeb';
 import DisenoUIUX from './pages/servicios/DisenoUIUX';
 import AplicacionesPWA from './pages/servicios/AplicacionesPWA';
 import AutomatizacionAPIs from './pages/servicios/AutomatizacionAPIs';
-
+import Ejemplos from './pages/servicios/Ejemplos'; // ✅ NUEVA PÁGINA INTEGRADA
 
 // 🎯 Secciones principales
 import Hero from './components/Hero';
@@ -28,7 +29,7 @@ import Footer from './components/Footer/Footer';
 function Home() {
   return (
     <>
-      <ScrollToSection /> {/* ✅ Scroll basado en la URL */}
+      <ScrollToSection />
 
       <section id="inicio">
         <Hero />
@@ -66,11 +67,13 @@ function App() {
           <Route path="/servicios/diseno-ui-ux" element={<DisenoUIUX />} />
           <Route path="/servicios/pwa" element={<AplicacionesPWA />} />
           <Route path="/servicios/automatizacion-apis" element={<AutomatizacionAPIs />} />
+          <Route path="/servicios/ejemplos" element={<Ejemplos />} /> {/* ✅ NUEVA RUTA */}
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones />} />
           <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
         </Routes>
       </main>
 
+      <WidgetWhatsApp />
       <Footer />
     </Router>
   );

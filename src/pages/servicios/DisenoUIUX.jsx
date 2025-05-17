@@ -19,6 +19,15 @@ export default function DisenoUIUX() {
     AOS.init({ duration: 1000 });
   }, []);
 
+  const whatsapp = '573150399322';
+
+  const mensajeAsesoria = encodeURIComponent(
+    '¡Hola! Estoy interesada en una asesoría para mejorar la experiencia visual de mi sitio con diseño UI/UX. ✨'
+  );
+  const mensajeImpacto = encodeURIComponent(
+    '¡Hola Lukbyte! Me gustaría crear una interfaz moderna, atractiva y efectiva para mi negocio. 🎨'
+  );
+
   return (
     <section className="uiux-container">
       {/* 🐝 Abejas decorativas */}
@@ -40,13 +49,25 @@ export default function DisenoUIUX() {
       {/* 🎯 Hero emocional */}
       <div className="uiux-hero">
         <div className="uiux-hero-text">
-          <h1 className="titulo-impactante" data-aos="fade-up">Interfaces que aumentan conversiones y fidelizan usuarios.</h1>
+          <h1 className="titulo-impactante" data-aos="fade-up">
+            Interfaces que aumentan conversiones y fidelizan usuarios.
+          </h1>
           <p data-aos="fade-up" data-aos-delay="200">
-            Convertimos tu visión en productos digitales que impactan, enamoran y hacen crecer tu negocio.
+            Convertimos tu visión en productos digitales que impactan, enamoran y hacen crecer tu
+            negocio.
           </p>
           <div className="uiux-hero-buttons">
-            <button className="btn-principal">🎨 Agendar asesoría de diseño</button>
-            <button className="btn-secundario">🔍 Ver ejemplos</button>
+            <a
+              className="btn-principal"
+              href={`https://wa.me/${whatsapp}?text=${mensajeAsesoria}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🎨 Agendar asesoría de diseño
+            </a>
+            <a className="btn-secundario" href="/servicios/ejemplos#uiux">
+              🔍 Ver ejemplos
+            </a>
           </div>
         </div>
         <div className="uiux-mockup" data-aos="zoom-in-left">
@@ -58,7 +79,8 @@ export default function DisenoUIUX() {
       <section className="uiux-beneficios">
         <h2 className="titulo-impactante">✨ ¿Por qué el diseño UI/UX es esencial?</h2>
         <p>
-          El diseño UI/UX no es solo estética. Es la clave para crear experiencias fluidas, memorables y eficaces.
+          El diseño UI/UX no es solo estética. Es la clave para crear experiencias fluidas,
+          memorables y eficaces.
         </p>
         <div className="uiux-beneficios-grid">
           {[
@@ -131,11 +153,16 @@ export default function DisenoUIUX() {
       <section className="uiux-testimonios">
         <h2 className="titulo-impactante">🗣 Lo que dicen nuestros clientes</h2>
         <div className="testimonio-card" data-aos="fade-right">
-          <p>“Nuestra app se volvió mucho más clara e intuitiva. Las clientas entienden al instante cómo usarla.”</p>
+          <p>
+            “Nuestra app se volvió mucho más clara e intuitiva. Las clientas entienden al instante
+            cómo usarla.”
+          </p>
           <span>— Karla R., BeautyApp</span>
         </div>
         <div className="testimonio-card" data-aos="fade-left">
-          <p>“Antes la gente se perdía. Hoy nos felicitan por lo fácil que es usar nuestro sistema.”</p>
+          <p>
+            “Antes la gente se perdía. Hoy nos felicitan por lo fácil que es usar nuestro sistema.”
+          </p>
           <span>— Pedro S., Gestión360</span>
         </div>
       </section>
@@ -145,7 +172,10 @@ export default function DisenoUIUX() {
         <h2 className="titulo-impactante">❓ Preguntas frecuentes</h2>
         <details>
           <summary>¿Puedo pedir solo el diseño sin desarrollo?</summary>
-          <p>¡Claro! Ofrecemos diseño como servicio independiente para que lo uses con cualquier equipo de desarrollo.</p>
+          <p>
+            ¡Claro! Ofrecemos diseño como servicio independiente para que lo uses con cualquier
+            equipo de desarrollo.
+          </p>
         </details>
         <details>
           <summary>¿Con qué herramientas trabajan?</summary>
@@ -163,10 +193,26 @@ export default function DisenoUIUX() {
 
       {/* 🔥 CTA Final */}
       <section className="uiux-cta">
-        <h2 className="titulo-impactante">Diseñemos una experiencia que tu cliente no olvide <br /> ¿Empezamos hoy?</h2>
+        <h2 className="titulo-impactante">
+          Diseñemos una experiencia que tu cliente no olvide <br /> ¿Empezamos hoy?
+        </h2>
         <div className="cta-buttons">
-          <button className="btn-principal">Quiero una interfaz que impacte</button>
-          <button className="btn-secundario">Agendar asesoría gratuita</button>
+          <a
+            href={`https://wa.me/${whatsapp}?text=${mensajeImpacto}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-principal"
+          >
+            Quiero una interfaz que impacte
+          </a>
+          <a
+            href={`https://wa.me/${whatsapp}?text=${mensajeAsesoria}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secundario"
+          >
+            Agendar asesoría gratuita
+          </a>
         </div>
       </section>
     </section>
