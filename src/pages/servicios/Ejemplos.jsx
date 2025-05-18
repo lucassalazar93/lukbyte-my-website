@@ -23,6 +23,8 @@ import miel from '../../assets/ejemplos/miel.png';
 import vinos from '../../assets/ejemplos/vinos.png';
 import perros from '../../assets/ejemplos/perros.png';
 import postres from '../../assets/ejemplos/postres.png';
+import api1 from '../../assets/ejemplos/apis (1).png';
+import api2 from '../../assets/ejemplos/apis (2).png';
 
 export default function Ejemplos() {
   useEffect(() => {
@@ -99,7 +101,7 @@ export default function Ejemplos() {
           id="api"
           titulo="⚙️ Automatización & APIs"
           descripcion="Procesos inteligentes que ahorran tiempo y evitan errores."
-          imagenes={[generico]}
+          imagenes={[api1, api2]}
           ctaTexto="¿Quieres que tu negocio trabaje por ti?"
           ctaLink="https://wa.me/573150399322?text=Quiero%20automatizar%20mi%20empresa"
           ctaBoton="Automatizar mi empresa"

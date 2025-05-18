@@ -1,44 +1,54 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom"; // ✅ Importación añadida
-import abeja from "../../assets/abejas/abeja1.png";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import abeja from '../../assets/abejas/abeja1.png';
 
 // Íconos
-import iconoWeb from "../../assets/icons/desarrolloWeb.png";
-import iconoUIUX from "../../assets/icons/uiux.png";
-import iconoPWA from "../../assets/icons/pwa.png";
-import iconoAPI from "../../assets/icons/api.png";
+import iconoWeb from '../../assets/icons/desarrolloWeb.png';
+import iconoUIUX from '../../assets/icons/uiux.png';
+import iconoPWA from '../../assets/icons/pwa.png';
+import iconoAPI from '../../assets/icons/api.png';
+import iconoInvitaciones from '../../assets/icons/invitaciones.png'; // ✅ nuevo
 
-import "./Servicios.css";
+import './Servicios.css';
 
 const servicios = [
   {
-    titulo: "Desarrollo Web Personalizado",
-    texto: "Creamos sitios web únicos, pedagógicos y adaptados a tus necesidades y objetivos, optimizados para todos los dispositivos.",
+    titulo: 'Desarrollo Web Personalizado',
+    texto:
+      'Creamos sitios web únicos, pedagógicos y adaptados a tus necesidades y objetivos, optimizados para todos los dispositivos.',
     icono: iconoWeb,
-    ruta: "/servicios/desarrollo-web",
+    ruta: '/servicios/desarrollo-web',
   },
   {
-    titulo: "Diseño UI-UX Profesional",
-    texto: "Transformamos ideas en interfaces visualmente atractivas y fáciles de usar, priorizando la experiencia del usuario.",
+    titulo: 'Diseño UI-UX Profesional',
+    texto:
+      'Transformamos ideas en interfaces visualmente atractivas y fáciles de usar, priorizando la experiencia del usuario.',
     icono: iconoUIUX,
-    ruta: "/servicios/diseno-ui-ux", // ✅ ACTIVADO
+    ruta: '/servicios/diseno-ui-ux',
   },
   {
-  titulo: "Aplicaciones Web Progresivas",
-  texto: "Desarrollamos aplicaciones rápidas y funcionales que puedes instalar y usar desde cualquier dispositivo.",
-  icono: iconoPWA,
-  ruta: "/servicios/pwa", // ✅ Ruta habilitada
+    titulo: 'Aplicaciones Web Progresivas',
+    texto:
+      'Desarrollamos aplicaciones rápidas y funcionales que puedes instalar y usar desde cualquier dispositivo.',
+    icono: iconoPWA,
+    ruta: '/servicios/pwa',
   },
-
   {
-  titulo: "Automatización y APIs",
-  texto: "Optimizamos tus procesos conectando sistemas con flujos seguros y automatizados, mejorando tu eficiencia.",
-  icono: iconoAPI,
-  ruta: "/servicios/automatizacion-apis", // ✅ Activado
-  }
+    titulo: 'Automatización y APIs',
+    texto:
+      'Optimizamos tus procesos conectando sistemas con flujos seguros y automatizados, mejorando tu eficiencia.',
+    icono: iconoAPI,
+    ruta: '/servicios/automatizacion-apis',
+  },
+  {
+    titulo: 'Tarjetas Digitales para Eventos',
+    texto:
+      'Creamos invitaciones digitales hermosas, interactivas y personalizadas para bodas, 15 años, primeras comuniones y más.',
+    icono: iconoInvitaciones,
+    ruta: '/servicios/invitaciones-digitales',
+  },
 ];
-
 
 export default function Servicios() {
   return (
@@ -61,7 +71,7 @@ export default function Servicios() {
 
       <h2 className="servicios-title">Nuestros Servicios</h2>
 
-      <div className="servicios-grid">
+      <div className="servicios-grid layout-cinco">
         {servicios.map((s, i) => (
           <motion.div
             className="servicio-card"

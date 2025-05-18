@@ -13,6 +13,7 @@ import DisenoUIUX from './pages/servicios/DisenoUIUX';
 import AplicacionesPWA from './pages/servicios/AplicacionesPWA';
 import AutomatizacionAPIs from './pages/servicios/AutomatizacionAPIs';
 import Ejemplos from './pages/servicios/Ejemplos'; // ✅ NUEVA PÁGINA INTEGRADA
+import InvitacionesDigitales from './pages/servicios/InvitacionesDigitales';
 
 // 🎯 Secciones principales
 import Hero from './components/Hero';
@@ -68,6 +69,7 @@ function App() {
           <Route path="/servicios/pwa" element={<AplicacionesPWA />} />
           <Route path="/servicios/automatizacion-apis" element={<AutomatizacionAPIs />} />
           <Route path="/servicios/ejemplos" element={<Ejemplos />} /> {/* ✅ NUEVA RUTA */}
+          <Route path="/servicios/invitaciones-digitales" element={<InvitacionesDigitales />} />
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones />} />
           <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
         </Routes>
