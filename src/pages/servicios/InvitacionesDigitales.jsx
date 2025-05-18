@@ -2,9 +2,11 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectCoverflow } from 'swiper/modules';
 import { motion } from 'framer-motion';
+import Zoom from 'react-medium-image-zoom';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
+import 'react-medium-image-zoom/dist/styles.css';
 import './InvitacionesDigitales.css';
 
 // Imágenes
@@ -38,13 +40,16 @@ const InvitacionesDigitales = () => {
           </motion.p>
           <div className="inv-hero-buttons">
             <a
-              href="https://wa.me/573001112233?text=Hola!%20Quiero%20una%20invitaci%C3%B3n%20digital%20para%20mi%20evento"
+              href="https://wa.me/573001112233?text=Hola!%20Quiero%20una%20demo%20de%20invitación%20digital"
               className="btn-cta"
             >
-              Solicita tu diseño ahora
+              Solicitar demo gratuita
             </a>
-            <a href="#galeria" className="btn-secundario">
-              Ver ejemplos
+            <a
+              href="https://wa.me/573001112233?text=Hola!%20Quiero%20agendar%20una%20asesoría"
+              className="btn-secundario"
+            >
+              Agendar asesoría
             </a>
           </div>
         </div>
@@ -66,93 +71,130 @@ const InvitacionesDigitales = () => {
           effect="coverflow"
           modules={[Autoplay, Pagination, EffectCoverflow]}
         >
-          {/* BODA */}
-          <SwiperSlide>
-            <div className="slide-content">
-              <img src={boda} alt="Boda Laura & Andrés" />
-              <h3>💍 Invitación Digital: Boda </h3>
-              <ul className="descripcion-lista">
-                <li>💖 Portada animada con nombres y fecha del evento</li>
-                <li>🎵 Música personalizada</li>
-                <li>📸 Galería de fotos de la pareja</li>
-                <li>🗓️ Cuenta regresiva al gran día</li>
-                <li>📍 Google Maps para ubicaciones</li>
-                <li>📅 Itinerario del evento</li>
-                <li>🫶 Mensajes personalizados para los invitados</li>
-                <li>📩 Confirmación de asistencia (RSVP)</li>
-                <li>🎁 Lista de regalos digital o bancaria</li>
-                <li>👗 Dress code con estilo visual</li>
-                <li>🌿 Diseño personalizado visual</li>
-                <li>🔐 Acceso privado con contraseña</li>
-                <li>📨 Compartible por redes</li>
-              </ul>
-            </div>
-          </SwiperSlide>
-
-          {/* QUINCES */}
-          <SwiperSlide>
-            <div className="slide-content">
-              <img src={quinces} alt="15 años Camila" />
-              <h3>🎈 Invitación de 15 años</h3>
-              <ul className="descripcion-lista">
-                <li>🌟 Animación con luz y brillo</li>
-                <li>🎤 Música pop juvenil</li>
-                <li>📷 Galería de fotos de infancia y preparativos</li>
-                <li>📅 Itinerario del evento (entrada, vals, torta, etc.)</li>
-                <li>📍 Ubicación Google Maps de salón</li>
-                <li>💬 Confirmación automática (WhatsApp)</li>
-                <li>👗 Dress code con inspiración visual</li>
-              </ul>
-            </div>
-          </SwiperSlide>
-
-          {/* COMUNIÓN */}
-          <SwiperSlide>
-            <div className="slide-content">
-              <img src={primeraComunion} alt="Primera Comunión Mateo" />
-              <h3>⛪ Primera Comunión</h3>
-              <ul className="descripcion-lista">
-                <li>🙏 Portada con diseño angelical</li>
-                <li>📖 Cronograma de misa y recepción</li>
-                <li>🎁 Lista de regalos religiosos u obsequios sugeridos</li>
-                <li>🌍 Mapa del lugar de ceremonia</li>
-                <li>📩 Confirmación y dedicatorias</li>
-              </ul>
-            </div>
-          </SwiperSlide>
-
-          {/* FIESTA DISCO */}
-          <SwiperSlide>
-            <div className="slide-content">
-              <img src={disco} alt="Invitación Fiesta Disco" />
-              <h3>🎶 Fiesta Electrónica / Discoteca</h3>
-              <ul className="descripcion-lista">
-                <li>💫 Animaciones neon, beat y efectos visuales</li>
-                <li>🎧 Playlist integrada (Spotify/YouTube)</li>
-                <li>📲 QR para entrar o confirmar asistencia</li>
-                <li>🕺 Estética tipo flyer moderno</li>
-              </ul>
-            </div>
-          </SwiperSlide>
-
-          {/* EMPRESARIAL */}
-          <SwiperSlide>
-            <div className="slide-content">
-              <img src={empresariales} alt="Invitación Evento Empresarial" />
-              <h3>💼 Evento Empresarial</h3>
-              <ul className="descripcion-lista">
-                <li>📈 Estética sobria y elegante</li>
-                <li>📝 Agenda con horarios, speakers y actividades</li>
-                <li>📱 Botón de inscripción / enlace a CRM</li>
-                <li>🎥 Enlace a transmisiones en vivo (Zoom, Meet)</li>
-                <li>🔐 Control de acceso privado</li>
-              </ul>
-            </div>
-          </SwiperSlide>
+          {[
+            {
+              img: boda,
+              title: '💍 Invitación Digital: Boda',
+              items: [
+                '💖 Portada animada con nombres y fecha',
+                '🎵 Música personalizada',
+                '📸 Galería de fotos',
+                '🗓️ Cuenta regresiva',
+                '📍 Mapa del evento',
+                '📅 Itinerario',
+                '💬 Mensajes a invitados',
+                '📩 Confirmación de asistencia',
+                '🎁 Lista de regalos',
+                '👗 Dress code',
+                '🌿 Diseño personalizado',
+                '🔐 Acceso privado',
+                '📨 Compartible por redes',
+              ],
+            },
+            {
+              img: quinces,
+              title: '🎈 Quinceañera',
+              items: [
+                '✨ Animaciones brillantes',
+                '🎤 Música pop moderna',
+                '🧸 Fotos de infancia y preparación',
+                '📅 Itinerario: Vals, brindis, fiesta',
+                '📍 Mapa del salón',
+                '👗 Vestuario sugerido',
+              ],
+            },
+            {
+              img: primeraComunion,
+              title: '⛪ Primera Comunión',
+              items: [
+                '🕊️ Diseño angelical',
+                '🕘 Misa y recepción',
+                '🎁 Lista de regalos religiosos',
+                '📍 Mapa de iglesia',
+                '📝 Confirmación con mensaje',
+              ],
+            },
+            {
+              img: disco,
+              title: '🎶 Fiesta Electrónica',
+              items: [
+                '💫 Visuales neon animados',
+                '🎧 Playlist integrada',
+                '🕺 QR para entrada',
+                '📱 Diseño estilo flyer',
+              ],
+            },
+            {
+              img: empresariales,
+              title: '💼 Evento Empresarial',
+              items: [
+                '📈 Estilo elegante y profesional',
+                '🗓️ Agenda de actividades',
+                '📱 Botón de inscripción',
+                '💻 Link de videollamada',
+                '🔐 Control de acceso',
+              ],
+            },
+          ].map((card, index) => (
+            <SwiperSlide key={index}>
+              <div className="slide-content">
+                <Zoom>
+                  <img src={card.img} alt={card.title} className="zoom-img" />
+                </Zoom>
+                <h3>{card.title}</h3>
+                <ul className="descripcion-lista">
+                  {card.items.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </section>
 
-      {/* Puedes continuar con beneficios, testimonios, CTA final... */}
+      {/* PREGUNTAS FRECUENTES */}
+      <section className="faq-section">
+        <h2>Preguntas Frecuentes</h2>
+        <div className="faq-box">
+          <details>
+            <summary>¿Cuánto tarda el desarrollo?</summary>
+            <p>Entre 2 y 5 días hábiles según el tipo de evento.</p>
+          </details>
+          <details>
+            <summary>¿Puedo actualizar el contenido yo mismo?</summary>
+            <p>Sí. Incluimos acceso editable o servicio de cambios posteriores.</p>
+          </details>
+          <details>
+            <summary>¿Incluye mantenimiento?</summary>
+            <p>¡Sí! Mantenimiento gratuito los primeros 15 días.</p>
+          </details>
+          <details>
+            <summary>¿Qué necesito para comenzar?</summary>
+            <p>Solo tus datos, fotos y tipo de evento. Nosotros hacemos el resto.</p>
+          </details>
+        </div>
+      </section>
+
+      {/* CTA FINAL */}
+      <section className="inv-cta-final">
+        <h2>¿Listo para transformar tu evento?</h2>
+        <p>Regístrate o agenda una asesoría personalizada. ¡Te guiamos paso a paso!</p>
+        <div className="inv-hero-buttons">
+          <a
+            href="https://wa.me/573001112233?text=Hola!%20Quiero%20una%20demo%20de%20invitación%20digital"
+            className="btn-cta"
+          >
+            Solicitar demo gratuita
+          </a>
+          <a
+            href="https://wa.me/573001112233?text=Hola!%20Quiero%20agendar%20una%20asesoría"
+            className="btn-secundario"
+          >
+            Agendar asesoría
+          </a>
+        </div>
+      </section>
     </div>
   );
 };
