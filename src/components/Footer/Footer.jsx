@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
@@ -12,21 +11,31 @@ import instagram from '../../assets/icons/instagram.png';
 import tiktok from '../../assets/icons/tiktok.png';
 
 export default function Footer() {
-  const form = useRef();
+  const [nombre, setNombre] = useState('');
+  const [correo, setCorreo] = useState('');
+  const [mensaje, setMensaje] = useState('');
 
-  const enviarCorreo = (e) => {
+  const enviarWhatsApp = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', form.current, {
-        publicKey: 'TU_PUBLIC_KEY',
-      })
-      .then(
-        () => {
-          alert('Mensaje enviado con éxito');
-          form.current.reset();
-        },
-        (error) => alert('Error al enviar el mensaje: ' + error.text)
-      );
+
+    const texto = `
+Solicitud de cotización desde la web:
+
+Nombre: ${nombre}
+Correo: ${correo}
+
+Esto es lo que necesita:
+"${mensaje}"
+
+Quedo super atent@ a la respuesta.
+`;
+
+    const url = `https://wa.me/573150399322?text=${encodeURIComponent(texto)}`;
+    window.open(url, '_blank');
+
+    setNombre('');
+    setCorreo('');
+    setMensaje('');
   };
 
   return (
@@ -38,19 +47,29 @@ export default function Footer() {
           <p>Soluciones digitales inteligentes para marcas que quieren destacar.</p>
         </div>
 
-        {/* Columna 2: Enlaces de navegación desde cualquier página */}
+        {/* Columna 2: Enlaces */}
         <div className="footer-col links">
           <h4>Enlaces</h4>
           <ul>
-            <li><Link to="/?scrollTo=inicio">Inicio</Link></li>
-            <li><Link to="/?scrollTo=servicios">Servicios</Link></li>
-            <li><Link to="/?scrollTo=proyectos">Proyectos</Link></li>
-            <li><Link to="/?scrollTo=testimonios">Testimonios</Link></li>
-            <li><Link to="/?scrollTo=contacto">Contacto</Link></li>
+            <li>
+              <Link to="/?scrollTo=inicio">Inicio</Link>
+            </li>
+            <li>
+              <Link to="/?scrollTo=servicios">Servicios</Link>
+            </li>
+            <li>
+              <Link to="/?scrollTo=proyectos">Proyectos</Link>
+            </li>
+            <li>
+              <Link to="/?scrollTo=testimonios">Testimonios</Link>
+            </li>
+            <li>
+              <Link to="/?scrollTo=contacto">Contacto</Link>
+            </li>
           </ul>
         </div>
 
-        {/* Columna 3: Información de contacto */}
+        {/* Columna 3: Contacto */}
         <div className="footer-col contacto">
           <h4>Contacto</h4>
           <ul>
@@ -71,13 +90,34 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Columna 4: Formulario de cotización y boletín */}
+        {/* Columna 4: Formulario de cotización */}
         <div className="footer-col formulario" id="contacto">
           <h4>Solicita tu cotización</h4>
-          <form ref={form} onSubmit={enviarCorreo}>
-            <input type="text" name="user_name" placeholder="Nombre completo" required />
-            <input type="email" name="user_email" placeholder="Correo electrónico" required />
-            <textarea name="message" placeholder="¿Qué necesitas?" rows={3} required></textarea>
+          <form onSubmit={enviarWhatsApp}>
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Nombre completo"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+              required
+            />
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Correo electrónico"
+              value={correo}
+              onChange={(e) => setCorreo(e.target.value)}
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="¿Qué necesitas?"
+              rows={3}
+              value={mensaje}
+              onChange={(e) => setMensaje(e.target.value)}
+              required
+            ></textarea>
             <button type="submit">Enviar</button>
           </form>
 
@@ -102,14 +142,16 @@ export default function Footer() {
         ></iframe>
       </div>
 
-      {/* Derechos legales y navegación legal */}
+      {/* Footer bottom */}
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} Lukbyte. Todos los derechos reservados.</p>
         <p>
           <Link to="/terminos-y-condiciones">Términos y condiciones</Link> |{' '}
           <Link to="/politica-de-privacidad">Política de privacidad</Link>
         </p>
-        <p>Diseñado por <strong>Lucas Salazar</strong> 💡</p>
+        <p>
+          Diseñado por <strong>Lucas Salazar</strong> 💡
+        </p>
       </div>
 
       {/* Abejas decorativas */}

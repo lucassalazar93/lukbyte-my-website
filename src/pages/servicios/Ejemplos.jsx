@@ -1,12 +1,11 @@
-// ✅ Ejemplos.jsx (componente completo mejorado)
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import PropTypes from 'prop-types';
 import ScrollToHash from '../../utils/ScrollToHash';
 import './Ejemplos.css';
 
-import generico from '../../assets/ejemplos/generico.jpg';
+// Imágenes
 import naturista from '../../assets/ejemplos/raiz-viva.png';
 import sabor from '../../assets/ejemplos/saboresFirmados.png';
 import veterinaria from '../../assets/ejemplos/veterinaria.png';
@@ -27,15 +26,41 @@ import api1 from '../../assets/ejemplos/apis (1).png';
 import api2 from '../../assets/ejemplos/apis (2).png';
 
 export default function Ejemplos() {
+  const [nombre, setNombre] = useState('');
+  const [correo, setCorreo] = useState('');
+  const [mensaje, setMensaje] = useState('');
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleEnviarWhatsApp = (e) => {
+    e.preventDefault();
+    const texto = `
+ ¡Hola equipo Lukbyte!
+
+ Soy ${nombre} (${correo})
+ Estoy interesad@ en una propuesta personalizada para mi proyecto.
+
+ Esto es lo que necesito:
+"${mensaje}"
+
+
+
+ Muchas gracias, estaré atent@ a su propuesta.
+    `;
+    const url = `https://wa.me/573150399322?text=${encodeURIComponent(texto)}`;
+    window.open(url, '_blank');
+    setNombre('');
+    setCorreo('');
+    setMensaje('');
+  };
 
   return (
     <>
       <ScrollToHash />
       <main className="ejemplos-container">
-        {/* Hero principal */}
+        {/* Hero */}
         <header className="ejemplos-hero">
           <h1>Explora Ejemplos de Nuestro Trabajo</h1>
           <p>
@@ -107,7 +132,7 @@ export default function Ejemplos() {
           ctaBoton="Automatizar mi empresa"
         />
 
-        {/* Testimonio directo */}
+        {/* Testimonio */}
         <section className="clientes-testimonios">
           <h2>💬 Lo que dicen nuestros clientes</h2>
           <blockquote>
@@ -116,7 +141,7 @@ export default function Ejemplos() {
           <p>– Claudia R., ecommerce</p>
         </section>
 
-        {/* Cierre final tipo embudo */}
+        {/* CTA final */}
         <section className="cta-final">
           <h2>🚀 Tu proyecto puede ser el próximo caso de éxito</h2>
           <p>
@@ -138,14 +163,34 @@ export default function Ejemplos() {
           </div>
         </section>
 
-        {/* Formulario */}
+        {/* Formulario interactivo */}
         <section id="formulario" className="formulario">
           <h3>💡 Agenda una llamada</h3>
-          <form>
-            <input type="text" placeholder="Nombre completo" required />
-            <input type="email" placeholder="Correo electrónico" required />
-            <textarea placeholder="¿Qué necesitas?" required></textarea>
-            <button type="submit">Enviar</button>
+          <form onSubmit={handleEnviarWhatsApp}>
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Nombre completo"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              value={correo}
+              onChange={(e) => setCorreo(e.target.value)}
+              required
+            />
+            <textarea
+              name="mensaje"
+              placeholder="¿Qué necesitas?"
+              value={mensaje}
+              onChange={(e) => setMensaje(e.target.value)}
+              required
+            ></textarea>
+            <button type="submit">📨 Enviar</button>
           </form>
         </section>
       </main>

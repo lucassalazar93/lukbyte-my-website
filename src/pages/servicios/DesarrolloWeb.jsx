@@ -64,14 +64,10 @@ export default function DesarrolloWeb() {
             Transformamos tus ideas en sitios web modernos, optimizados y listos para convertir.
           </p>
           <div className="hero-buttons">
-            <a
-              className="btn-principal"
-              href={`https://wa.me/${whatsapp}?text=${demoMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              🎥 Solicita una demo gratuita
+            <a className="btn-secundario" href="/servicios/ejemplos#web">
+              🔍 Ver ejemplos
             </a>
+
             <a
               className="btn-secundario"
               href={`https://wa.me/${whatsapp}?text=${asesoriaMessage}`}

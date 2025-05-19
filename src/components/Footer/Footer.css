@@ -119,7 +119,6 @@
   height: 22px;
 }
 
-
 .redes a:hover img {
   filter: drop-shadow(0 0 8px #ffaa00) brightness(1.2);
   transform: scale(1.2);
@@ -180,7 +179,8 @@
 }
 
 @keyframes flotar {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
   50% {
@@ -209,5 +209,21 @@
 
   .footer-abeja {
     width: 45px;
+  }
+}
+/* 🖼️ Centrar logo del footer en móvil */
+@media (max-width: 768px) {
+  .footer-col.logo {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-logo {
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .footer-col.logo p {
+    text-align: center;
   }
 }

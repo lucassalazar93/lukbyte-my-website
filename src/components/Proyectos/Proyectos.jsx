@@ -1,10 +1,10 @@
-import React from "react";
-import "./Proyectos.css";
-import { proyectos } from "./proyectosData";
+import React from 'react';
+import './Proyectos.css';
+import { proyectos } from './proyectosData';
 
-// ✅ Importa correctamente las abejas desde assets
-import abeja1 from "../../assets/abejas/abeja1.png";
-import abeja2 from "../../assets/abejas/abeja2.png";
+// ✅ Imágenes decorativas
+import abeja1 from '../../assets/abejas/abeja1.png';
+import abeja2 from '../../assets/abejas/abeja2.png';
 
 export default function Proyectos() {
   return (
@@ -21,24 +21,16 @@ export default function Proyectos() {
             </div>
             <h3>{item.titulo}</h3>
             <p>{item.subtitulo}</p>
-            <a href="#" className="btn-ver">
+
+            {/* Botón actualizado que dirige a la sección de ejemplos */}
+            <a href="/servicios/ejemplos#" className="btn-ver">
               Ver Más
             </a>
 
-            {/* 🐝 Abejas decorativas visibles con ruta correcta */}
-            {i === 0 && (
-              <img
-                src={abeja1}
-                className="abeja-card top-left"
-                alt="abeja decorativa"
-              />
-            )}
+            {/* Abejas decorativas según índice */}
+            {i === 0 && <img src={abeja1} className="abeja-card top-left" alt="abeja decorativa" />}
             {i === 1 && (
-              <img
-                src={abeja2}
-                className="abeja-card bottom-right"
-                alt="abeja decorativa"
-              />
+              <img src={abeja2} className="abeja-card bottom-right" alt="abeja decorativa" />
             )}
           </div>
         ))}

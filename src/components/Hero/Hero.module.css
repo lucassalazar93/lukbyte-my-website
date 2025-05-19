@@ -121,15 +121,38 @@
   transform: scale(1.1) rotate(5deg) translateY(-5px);
 }
 
-.topLeft   { top: 10%;  left: 5%;  animation-delay: 0s; }
-.topRight  { top: 15%;  right: 5%; animation-delay: 1s; }
-.bottomLeft{ bottom: 10%; left: 10%; animation-delay: 2s; }
-.bottomRight{ bottom: 15%; right: 10%; animation-delay: 3s; }
-.centerLeft { top: 45%; left: 5%; }
-.centerRight { top: 45%; right: 5%; }
+.topLeft {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+.topRight {
+  top: 15%;
+  right: 5%;
+  animation-delay: 1s;
+}
+.bottomLeft {
+  bottom: 10%;
+  left: 10%;
+  animation-delay: 2s;
+}
+.bottomRight {
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 3s;
+}
+.centerLeft {
+  top: 45%;
+  left: 5%;
+}
+.centerRight {
+  top: 45%;
+  right: 5%;
+}
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
   50% {
@@ -138,7 +161,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -171,5 +195,15 @@
 
   .panal-fondo {
     background-size: 24px;
+  }
+}
+
+/* 🐝 Ocultar abejas centrales y de abajo en móviles */
+@media (max-width: 768px) {
+  .centerLeft,
+  .centerRight,
+  .bottomLeft,
+  .bottomRight {
+    display: none !important;
   }
 }

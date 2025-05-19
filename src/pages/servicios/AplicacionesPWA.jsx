@@ -18,6 +18,14 @@ export default function AplicacionesPWA() {
     AOS.init({ duration: 1000 });
   }, []);
 
+  const whatsappMessage = encodeURIComponent(
+    `¡Hola! Estoy interesad@ en desarrollar una Aplicación Web Progresiva (PWA) para mi negocio.
+
+Me gustaría agendar una asesoría gratuita para conocer cómo funciona y qué beneficios puede aportar a mi proyecto.`
+  );
+
+  const whatsappLink = `https://wa.me/573150399322?text=${whatsappMessage}`;
+
   return (
     <main className="pwa-container">
       {/* 🐝 Abejas decorativas animadas */}
@@ -48,11 +56,21 @@ export default function AplicacionesPWA() {
         <div className="contenido-hero" data-aos="fade-right">
           <h1 className="titulo-impactante">⚡ Aplicaciones Web Progresivas (PWA)</h1>
           <p>
-            Carga instantánea, experiencia nativa y acceso desde cualquier dispositivo. La tecnología que impulsa la nueva era del desarrollo web.
+            Carga instantánea, experiencia nativa y acceso desde cualquier dispositivo. La
+            tecnología que impulsa la nueva era del desarrollo web.
           </p>
           <div className="cta-hero">
-            <a href="#asesoria" className="btn-primario">Agendar asesoría</a>
-            <a href="#ejemplos-pwa" className="btn-secundario">Ver ejemplos</a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primario"
+            >
+              Agendar asesoría
+            </a>
+            <a href="#ejemplos-pwa" className="btn-secundario">
+              Ver ejemplos
+            </a>
           </div>
         </div>
         <div className="mockup-hero" data-aos="fade-left">
@@ -113,8 +131,13 @@ export default function AplicacionesPWA() {
       {/* CTA FINAL */}
       <section id="asesoria" className="cta-final">
         <h2 className="titulo-impactante">🔥 Lleva tu producto web al siguiente nivel</h2>
-        <p>Agendemos una asesoría gratuita y descubre cómo una PWA puede transformar tu experiencia digital.</p>
-        <a href="#contacto" className="btn-primario">Quiero una PWA para mi negocio</a>
+        <p>
+          Agendemos una asesoría gratuita y descubre cómo una PWA puede transformar tu experiencia
+          digital.
+        </p>
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-primario">
+          Quiero una PWA para mi negocio
+        </a>
       </section>
     </main>
   );

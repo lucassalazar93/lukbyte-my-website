@@ -18,6 +18,16 @@ import disco from '../../assets/ejemplos/disco.png';
 import empresariales from '../../assets/ejemplos/empresariales.png';
 
 const InvitacionesDigitales = () => {
+  const demoMessage = encodeURIComponent(
+    '¡Hola! 🎉 Me interesa una demo gratuita de una invitación digital. Quisiera conocer ejemplos de bodas, 15 años o eventos empresariales. ¿Podrían compartirme opciones interactivas?'
+  );
+
+  const asesoriaMessage = encodeURIComponent(
+    '¡Hola! 🙋‍♀️ Me gustaría agendar una asesoría para crear una invitación digital personalizada para mi evento. ¿Cuándo podríamos conversar?'
+  );
+
+  const whatsappNumber = '573150399322';
+
   return (
     <div className="inv-digital-wrapper">
       {/* HERO */}
@@ -40,14 +50,18 @@ const InvitacionesDigitales = () => {
           </motion.p>
           <div className="inv-hero-buttons">
             <a
-              href="https://wa.me/573001112233?text=Hola!%20Quiero%20una%20demo%20de%20invitación%20digital"
+              href={`https://wa.me/${whatsappNumber}?text=${demoMessage}`}
               className="btn-cta"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Solicitar demo gratuita
             </a>
             <a
-              href="https://wa.me/573001112233?text=Hola!%20Quiero%20agendar%20una%20asesoría"
+              href={`https://wa.me/${whatsappNumber}?text=${asesoriaMessage}`}
               className="btn-secundario"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Agendar asesoría
             </a>
@@ -182,14 +196,18 @@ const InvitacionesDigitales = () => {
         <p>Regístrate o agenda una asesoría personalizada. ¡Te guiamos paso a paso!</p>
         <div className="inv-hero-buttons">
           <a
-            href="https://wa.me/573001112233?text=Hola!%20Quiero%20una%20demo%20de%20invitación%20digital"
+            href={`https://wa.me/${whatsappNumber}?text=${demoMessage}`}
             className="btn-cta"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Solicitar demo gratuita
           </a>
           <a
-            href="https://wa.me/573001112233?text=Hola!%20Quiero%20agendar%20una%20asesoría"
+            href={`https://wa.me/${whatsappNumber}?text=${asesoriaMessage}`}
             className="btn-secundario"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Agendar asesoría
           </a>

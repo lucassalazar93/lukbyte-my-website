@@ -18,6 +18,14 @@ export default function AutomatizacionAPIs() {
     AOS.init({ duration: 1000 });
   }, []);
 
+  const whatsappMessage = encodeURIComponent(
+    `¡Hola! Estoy interesad@ en automatizar procesos de mi negocio mediante APIs.
+
+Me gustaría agendar un diagnóstico gratuito para identificar oportunidades de integración y eficiencia.`
+  );
+
+  const whatsappLink = `https://wa.me/573150399322?text=${whatsappMessage}`;
+
   return (
     <main className="api-container">
       {/* 🐝 Abejas decorativas animadas */}
@@ -41,11 +49,21 @@ export default function AutomatizacionAPIs() {
         <div className="contenido-hero" data-aos="fade-right">
           <h1 className="titulo-impactante">⚙️ Automatización & APIs Inteligentes</h1>
           <p>
-            Integra, conecta y automatiza procesos clave de tu negocio con soluciones a medida. Aumenta tu eficiencia sin complicaciones.
+            Integra, conecta y automatiza procesos clave de tu negocio con soluciones a medida.
+            Aumenta tu eficiencia sin complicaciones.
           </p>
           <div className="cta-hero">
-            <a href="#asesoria" className="btn-primario">Agendar diagnóstico gratuito</a>
-            <a href="#casos-api" className="btn-secundario">Ver casos de uso</a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primario"
+            >
+              Agendar diagnóstico gratuito
+            </a>
+            <a href="#casos-api" className="btn-secundario">
+              Ver casos de uso
+            </a>
           </div>
         </div>
         <div className="mockup-api" data-aos="fade-left">
@@ -95,9 +113,19 @@ export default function AutomatizacionAPIs() {
         <h2 className="titulo-impactante">📌 Ejemplos de automatización aplicados a negocios</h2>
         <div className="grid-proyectos">
           {[
-            { img: caso1, texto: '🎯 Sincronización automática de leads entre sitio web y CRM en tiempo real.' },
-            { img: caso2, texto: '🧾 Bot de generación de facturas y envío automático a clientes cada mes.' },
-            { img: caso3, texto: '📲 Sistema de recordatorios por WhatsApp y SMS conectado a calendario interno.' },
+            {
+              img: caso1,
+              texto: '🎯 Sincronización automática de leads entre sitio web y CRM en tiempo real.',
+            },
+            {
+              img: caso2,
+              texto: '🧾 Bot de generación de facturas y envío automático a clientes cada mes.',
+            },
+            {
+              img: caso3,
+              texto:
+                '📲 Sistema de recordatorios por WhatsApp y SMS conectado a calendario interno.',
+            },
           ].map((caso, i) => (
             <div className="caso" key={i} data-aos="fade-up" data-aos-delay={i * 150}>
               <img src={caso.img} alt={`caso-${i + 1}`} />
@@ -111,9 +139,12 @@ export default function AutomatizacionAPIs() {
       <section id="asesoria" className="cta-final">
         <h2 className="titulo-impactante">🚀 Deja que tu negocio trabaje por ti</h2>
         <p>
-          Agenda una asesoría y descubre cómo automatizar procesos te permite ahorrar tiempo, dinero y errores humanos.
+          Agenda una asesoría y descubre cómo automatizar procesos te permite ahorrar tiempo, dinero
+          y errores humanos.
         </p>
-        <a href="#contacto" className="btn-primario">Quiero automatizar mi negocio</a>
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-primario">
+          Quiero automatizar mi negocio
+        </a>
       </section>
     </main>
   );
