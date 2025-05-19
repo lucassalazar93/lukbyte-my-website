@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToSection from './utils/ScrollToSection';
 
+// 🔥 Hotjar para mapas de calor
+import HotjarInitializer from './utils/HotjarInitializer';
+
 // 🐝 Elementos globales
 import AbejaSeguidora from './components/AbejaSeguidora/AbejaSeguidora';
 import WidgetWhatsApp from './components/WidgetWhatsApp';
@@ -12,7 +15,7 @@ import DesarrolloWeb from './pages/servicios/DesarrolloWeb';
 import DisenoUIUX from './pages/servicios/DisenoUIUX';
 import AplicacionesPWA from './pages/servicios/AplicacionesPWA';
 import AutomatizacionAPIs from './pages/servicios/AutomatizacionAPIs';
-import Ejemplos from './pages/servicios/Ejemplos'; // ✅ NUEVA PÁGINA INTEGRADA
+import Ejemplos from './pages/servicios/Ejemplos';
 import InvitacionesDigitales from './pages/servicios/InvitacionesDigitales';
 
 // 🎯 Secciones principales
@@ -58,9 +61,9 @@ function Home() {
 function App() {
   return (
     <Router>
+      <HotjarInitializer /> {/* ✅ Carga Hotjar en toda la app */}
       <AbejaSeguidora />
       <Navbar />
-
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -68,13 +71,12 @@ function App() {
           <Route path="/servicios/diseno-ui-ux" element={<DisenoUIUX />} />
           <Route path="/servicios/pwa" element={<AplicacionesPWA />} />
           <Route path="/servicios/automatizacion-apis" element={<AutomatizacionAPIs />} />
-          <Route path="/servicios/ejemplos" element={<Ejemplos />} /> {/* ✅ NUEVA RUTA */}
+          <Route path="/servicios/ejemplos" element={<Ejemplos />} />
           <Route path="/servicios/invitaciones-digitales" element={<InvitacionesDigitales />} />
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones />} />
           <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
         </Routes>
       </main>
-
       <WidgetWhatsApp />
       <Footer />
     </Router>
