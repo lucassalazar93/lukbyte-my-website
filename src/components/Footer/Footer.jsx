@@ -75,7 +75,7 @@ Quedo super atent@ a la respuesta.
           <ul>
             <li>📍 Medellín, Colombia</li>
             <li>📞 +57 315 039 9322</li>
-            <li>📧 administracionlukbyte@gmail.com</li>
+            <li>📧 lukbytedigital@gmail.com</li>
             <li className="redes">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                 <img src={facebook} alt="Facebook" />
