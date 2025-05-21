@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import ScrollToHash from '../../utils/ScrollToHash';
 import './Ejemplos.css';
 
-// Imágenes
+// Imágenes para secciones existentes
 import naturista from '../../assets/ejemplos/raiz-viva.png';
 import sabor from '../../assets/ejemplos/saboresFirmados.png';
 import veterinaria from '../../assets/ejemplos/veterinaria.png';
@@ -25,6 +25,13 @@ import postres from '../../assets/ejemplos/postres.png';
 import api1 from '../../assets/ejemplos/apis (1).png';
 import api2 from '../../assets/ejemplos/apis (2).png';
 
+// Imágenes NUEVAS para Bio Links e Invitaciones
+import bio1 from '../../assets/ejemplos/bio-restaurant.png';
+import bio2 from '../../assets/ejemplos/bio-manicurista.png';
+import bio3 from '../../assets/ejemplos/bio-modelo.png';
+import invitacion1 from '../../assets/ejemplos/invitacion-boda.png';
+import invitacion2 from '../../assets/ejemplos/invitacion-15s.png';
+
 export default function Ejemplos() {
   const [nombre, setNombre] = useState('');
   const [correo, setCorreo] = useState('');
@@ -37,17 +44,15 @@ export default function Ejemplos() {
   const handleEnviarWhatsApp = (e) => {
     e.preventDefault();
     const texto = `
- ¡Hola equipo Lukbyte!
+¡Hola equipo Lukbyte!
 
- Soy ${nombre} (${correo})
- Estoy interesad@ en una propuesta personalizada para mi proyecto.
+Soy ${nombre} (${correo})
+Estoy interesad@ en una propuesta personalizada para mi proyecto.
 
- Esto es lo que necesito:
+Esto es lo que necesito:
 "${mensaje}"
 
-
-
- Muchas gracias, estaré atent@ a su propuesta.
+Muchas gracias, estaré atent@ a su propuesta.
     `;
     const url = `https://wa.me/573150399322?text=${encodeURIComponent(texto)}`;
     window.open(url, '_blank');
@@ -132,7 +137,28 @@ export default function Ejemplos() {
           ctaBoton="Automatizar mi empresa"
         />
 
-        {/* Testimonio */}
+        {/* NUEVAS SECCIONES */}
+        <Seccion
+          id="bio-links"
+          titulo="🔗 Bio Links Personalizados"
+          descripcion="Creamos enlaces visuales, responsivos y únicos para destacar tus redes, productos o servicios desde Instagram, TikTok o tu firma digital. ¡Listos para impactar!"
+          imagenes={[bio1, bio2, bio3]}
+          ctaTexto="¿Quieres uno así para tu perfil?"
+          ctaLink="https://wa.me/573150399322?text=Estoy%20interesado%20en%20un%20Bio%20Link%20personalizado"
+          ctaBoton="Crear mi Bio Link"
+        />
+
+        <Seccion
+          id="invitaciones"
+          titulo="💌 Tarjetas Digitales para Eventos"
+          descripcion="Diseñamos invitaciones interactivas, hermosas y personalizadas para bodas, 15 años, primeras comuniones y más. Sorprende desde el primer clic."
+          imagenes={[invitacion1, invitacion2]}
+          ctaTexto="¿Quieres una invitación inolvidable?"
+          ctaLink="https://wa.me/573150399322?text=Quiero%20una%20invitación%20digital%20personalizada"
+          ctaBoton="Solicitar diseño personalizado"
+        />
+
+        {/* Testimonios */}
         <section className="clientes-testimonios">
           <h2>💬 Lo que dicen nuestros clientes</h2>
           <blockquote>
@@ -141,7 +167,7 @@ export default function Ejemplos() {
           <p>– Claudia R., ecommerce</p>
         </section>
 
-        {/* CTA final */}
+        {/* CTA Final */}
         <section className="cta-final">
           <h2>🚀 Tu proyecto puede ser el próximo caso de éxito</h2>
           <p>
@@ -163,7 +189,7 @@ export default function Ejemplos() {
           </div>
         </section>
 
-        {/* Formulario interactivo */}
+        {/* Formulario */}
         <section id="formulario" className="formulario">
           <h3>💡 Agenda una llamada</h3>
           <form onSubmit={handleEnviarWhatsApp}>

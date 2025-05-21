@@ -17,6 +17,7 @@ import AplicacionesPWA from './pages/servicios/AplicacionesPWA';
 import AutomatizacionAPIs from './pages/servicios/AutomatizacionAPIs';
 import Ejemplos from './pages/servicios/Ejemplos';
 import InvitacionesDigitales from './pages/servicios/InvitacionesDigitales';
+import BioLinks from './pages/servicios/BioLinks';
 
 // 🎯 Secciones principales
 import Hero from './components/Hero';
@@ -73,6 +74,7 @@ function App() {
           <Route path="/servicios/automatizacion-apis" element={<AutomatizacionAPIs />} />
           <Route path="/servicios/ejemplos" element={<Ejemplos />} />
           <Route path="/servicios/invitaciones-digitales" element={<InvitacionesDigitales />} />
+          <Route path="/servicios/bio-links" element={<BioLinks />} />
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones />} />
           <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
         </Routes>

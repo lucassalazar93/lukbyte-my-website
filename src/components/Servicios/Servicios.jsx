@@ -9,6 +9,7 @@ import iconoUIUX from '../../assets/icons/uiux.png';
 import iconoPWA from '../../assets/icons/pwa.png';
 import iconoAPI from '../../assets/icons/api.png';
 import iconoInvitaciones from '../../assets/icons/invitaciones.png'; // ✅ nuevo
+import iconoBioLink from '../../assets/icons/bioLink.png'; // 🆕 Bio Link
 
 import './Servicios.css';
 
@@ -47,6 +48,14 @@ const servicios = [
       'Creamos invitaciones digitales hermosas, interactivas y personalizadas para bodas, 15 años, primeras comuniones y más.',
     icono: iconoInvitaciones,
     ruta: '/servicios/invitaciones-digitales',
+  },
+
+  {
+    titulo: 'Bio Links Personalizados',
+    texto:
+      'Diseñamos enlaces visuales e impactantes para Instagram, TikTok y más. Ideal para destacar tus redes, productos o servicios en un solo lugar.',
+    icono: iconoBioLink,
+    ruta: '/servicios/bio-links', // Asegúrate de tener esta ruta creada o redirígela al WhatsApp
   },
 ];
 
