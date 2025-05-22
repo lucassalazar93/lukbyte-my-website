@@ -66,6 +66,9 @@ Quedo super atent@ a la respuesta.
             <li>
               <Link to="/?scrollTo=contacto">Contacto</Link>
             </li>
+            <li>
+              <Link to="/nosotros">Nosotros</Link>
+            </li>
           </ul>
         </div>
 

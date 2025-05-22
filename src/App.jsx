@@ -27,6 +27,7 @@ import Proyectos from './components/Proyectos/Proyectos';
 import Testimonios from './components/Testimonios/Testimonios';
 import TerminosCondiciones from './pages/TerminosCondiciones';
 import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
+import Nosotros from './pages/Nosotros';
 
 // 🦶 Pie de página profesional
 import Footer from './components/Footer/Footer';
@@ -77,6 +78,7 @@ function App() {
           <Route path="/servicios/bio-links" element={<BioLinks />} />
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones />} />
           <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
+          <Route path="/nosotros" element={<Nosotros />} />
         </Routes>
       </main>
       <WidgetWhatsApp />

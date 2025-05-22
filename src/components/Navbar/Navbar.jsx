@@ -56,6 +56,11 @@ export default function Navbar() {
               Contacto
             </Link>
           </li>
+          <li>
+            <Link to="/nosotros" onClick={handleClick}>
+              Nosotros
+            </Link>
+          </li>
         </ul>
 
         {/* Botón de acción principal */}
