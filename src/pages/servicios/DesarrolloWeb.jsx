@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom'; // ✅ ESTE IMPORT ES CLAVE
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 
@@ -68,14 +69,9 @@ export default function DesarrolloWeb() {
               🔍 Ver ejemplos
             </a>
 
-            <a
-              className="btn-secundario"
-              href={`https://wa.me/${whatsapp}?text=${asesoriaMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link to="/agendar" className="btn-secundario">
               📅 Agendar una asesoría
-            </a>
+            </Link>
           </div>
         </div>
 

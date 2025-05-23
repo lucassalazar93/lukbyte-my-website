@@ -28,6 +28,7 @@ import Testimonios from './components/Testimonios/Testimonios';
 import TerminosCondiciones from './pages/TerminosCondiciones';
 import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
 import Nosotros from './pages/Nosotros';
+import Agendar from './pages/Agendar';
 
 // 🦶 Pie de página profesional
 import Footer from './components/Footer/Footer';
@@ -79,6 +80,7 @@ function App() {
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones />} />
           <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
           <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/agendar" element={<Agendar />} />
         </Routes>
       </main>
       <WidgetWhatsApp />
