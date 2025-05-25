@@ -5,7 +5,7 @@ import styles from './Hero.module.css';
 import abeja1 from '../../assets/abejas/abeja1.png';
 import abeja2 from '../../assets/abejas/abeja2.png';
 import abeja3 from '../../assets/abejas/abeja3.png';
-import logo from '../../assets/logoLukbyte.png';
+import ParticlesFondo from './ParticlesFondo';
 
 const abejaData = [
   { src: abeja1, className: styles.topLeft },
@@ -13,30 +13,29 @@ const abejaData = [
   { src: abeja3, className: styles.bottomLeft },
   { src: abeja1, className: styles.bottomRight },
   { src: abeja2, className: styles.centerLeft },
-  { src: abeja3, className: styles.centerRight }
+  { src: abeja3, className: styles.centerRight },
 ];
 
 const Hero = () => {
   const controls = useRef(abejaData.map(() => useAnimation()));
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      const newPositions = abejaData.map(() => {
-        const dx = Math.random() * 100 - 50;
-        const dy = Math.random() * 100 - 50;
-        return { x: dx, y: dy };
-      });
+    const handleMouseMove = () => {
+      const newPositions = abejaData.map(() => ({
+        x: Math.random() * 60 - 30,
+        y: Math.random() * 60 - 30,
+      }));
 
       controls.current.forEach((ctrl, i) => {
         ctrl.start({
           x: newPositions[i].x,
           y: newPositions[i].y,
-          transition: { duration: 0.4, ease: 'easeOut' }
+          transition: { duration: 1.2, ease: 'easeInOut' },
         });
 
         setTimeout(() => {
-          ctrl.start({ x: 0, y: 0, transition: { duration: 1, ease: 'easeOut' } });
-        }, 1000);
+          ctrl.start({ x: 0, y: 0, transition: { duration: 2, ease: 'easeOut' } });
+        }, 1800);
       });
     };
 
@@ -45,8 +44,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className={`${styles.hero} panal-fondo`}>
-      {/* 🐝 Abejas inteligentes */}
+    <section className={styles.hero}>
+      <ParticlesFondo />
+
+      {/* 🐝 Abejas flotantes */}
       {abejaData.map((abeja, i) => (
         <motion.img
           key={i}
@@ -54,46 +55,42 @@ const Hero = () => {
           alt={`abeja-${i}`}
           className={`${styles.abeja} ${abeja.className}`}
           animate={controls.current[i]}
-          whileHover={{ scale: 1.3, rotate: 15 }}
+          whileHover={{ scale: 1.3, rotate: 10 }}
+          style={{ pointerEvents: 'none' }}
         />
       ))}
 
-      {/* 👑 Logo animado */}
-      <motion.img
-        src={logo}
-        alt="Logo Lukbyte"
-        className={`${styles.logo} ${styles.heroLogo}`}
-        initial={{ opacity: 0, scale: 0.6, rotate: -10 }}
-        animate={{ opacity: 1, scale: 1, rotate: 0 }}
-        transition={{ duration: 1.2, ease: 'easeOut' }}
-      />
-
-      {/* 📝 Texto con CTA */}
+      {/* 📝 Contenedor del texto alineado a la izquierda */}
       <motion.div
-        className={styles.texto}
-        initial={{ opacity: 0, y: 40 }}
+        className={styles.textWrapper}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 1 }}
+        transition={{ duration: 1 }}
       >
         <h1 className={styles.heroTitle}>
-          Impulsa Tu Negocio Con <span className={styles.highlight}>Lukbyte</span>
+          <span className={styles.blanco}>Luk</span>
+          <span className={styles.byte}>byte</span>
         </h1>
         <p className={styles.heroSubtitle}>
-          Soluciones Digitales e Inteligentes Que Trabajan Por Ti <strong>24/7</strong>
+          “Transformamos ideas en experiencias digitales{' '}
+          <span className={styles.destacado}>inolvidables.</span>”
         </p>
-        <a href="#servicios" className={styles.ctaButton}>
-          Descubre Nuestros Servicios
-        </a>
       </motion.div>
 
-      {/* 🔽 Flecha scroll */}
+      {/* 🚀 Botón CTA centrado */}
       <motion.div
-        className={styles.flecha}
-        animate={{ y: [0, 10, 0], opacity: [1, 0.6, 1] }}
-        transition={{ repeat: Infinity, duration: 1.8 }}
+        className={styles.centerCta}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
       >
-        <span>▼</span>
-        <p className={styles.scrollHint}>Desliza para ver más</p>
+        <a href="#productos" className={styles.ctaButton}>
+          Descubrir nuestros productos
+        </a>
+        <div className={styles.flecha}>
+          <span>▼</span>
+          <p className={styles.scrollHint}>Desliza para explorar</p>
+        </div>
       </motion.div>
     </section>
   );

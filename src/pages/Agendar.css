@@ -392,3 +392,159 @@
   background: #1ebd5b;
   box-shadow: 0 0 15px #1ebd5b;
 }
+
+/* === FORMULARIO AGENDAMIENTO PERSONALIZADO === */
+.demo-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.demo-form input,
+.demo-form select,
+.demo-form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: #00b9cd;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition:
+    border 0.2s ease,
+    background 0.2s ease;
+}
+
+.demo-form input::placeholder,
+.demo-form textarea::placeholder {
+  color: #00cae0;
+}
+
+.demo-form input:focus,
+.demo-form select:focus,
+.demo-form textarea:focus {
+  border-color: #00d4e8;
+  background: rgba(0, 240, 255, 0.05);
+}
+
+.demo-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='14' height='10' viewBox='0 0 14 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23ccc' d='M1 1l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.65rem;
+}
+
+.demo-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.whatsapp-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.codigo-pais {
+  width: 35%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 0.75rem;
+  color: #024b63;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.whatsapp-group input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: #ffe0e0;
+}
+/* === WHATSAPP - PhoneInput personalizado === */
+/* === WHATSAPP - PhoneInput personalizado CORREGIDO === */
+.react-tel-input {
+  width: 100% !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid #222 !important;
+  border-radius: 10px !important;
+  font-family: 'Poppins', sans-serif;
+  display: flex !important;
+  align-items: center !important;
+  height: auto !important;
+}
+
+.react-tel-input .form-control {
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 0.75rem 1rem 0.75rem 60px !important; /* espacio para la bandera */
+  color: #e0f7ff !important;
+  font-size: 0.95rem !important;
+  font-family: 'Poppins', sans-serif !important;
+  height: auto !important;
+  box-sizing: border-box;
+}
+
+.react-tel-input .form-control::placeholder {
+  color: #88b3c7 !important;
+}
+
+.react-tel-input .form-control:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.2) !important;
+}
+
+.react-tel-input .flag-dropdown {
+  background: #101c2c !important;
+  border-right: 1px solid #333 !important;
+  border-radius: 10px 0 0 10px !important;
+  width: 58px !important;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.react-tel-input .selected-flag {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-tel-input .country-list {
+  background-color: #0b111b !important;
+  color: #fff !important;
+  border: 1px solid #222;
+  font-family: 'Poppins', sans-serif;
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+.react-tel-input .country-list .country:hover {
+  background-color: rgba(0, 240, 255, 0.1) !important;
+  color: #00f0ff !important;
+}
+
+.react-tel-input .country-list .country.highlight {
+  background-color: rgba(0, 240, 255, 0.2) !important;
+  color: #00f0ff !important;
+}
+
+.react-tel-input .country-name {
+  color: #ccc !important;
+}

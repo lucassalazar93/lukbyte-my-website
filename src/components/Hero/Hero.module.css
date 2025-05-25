@@ -1,29 +1,32 @@
 /* =============================
-   🎯 Sección Hero Principal - Nivel Dios
+   📦 Importación de fuente externa
+   ============================= */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap');
+
+/* =============================
+   🎯 Sección Hero Principal - Fondo y Layout
    ============================= */
 .hero {
+  font-family: 'Rajdhani', sans-serif;
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  background-color: #0b0d1a;
-
-  /* 🎯 Efecto SVG tipo panal animado */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%2300aaff' fill-opacity='0.03' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: auto;
-  background-position: center top;
+  height: 100vh; /* Pantalla completa */
+  background-image:
+    url('../../assets/logoLukbyte.png'),
+    /* Imagen de abeja */ url('data:image/svg+xml,...'); /* Patrón hexagonal */
+  background-repeat: no-repeat, repeat;
+  background-position:
+    center right,
+    center top;
+  background-size: cover, auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 6vw;
+  box-sizing: border-box;
   animation: aparecer 1.2s ease-out forwards;
   opacity: 0;
-
-  color: #f5a623;
-  text-align: center;
-  padding: clamp(60px, 10vh, 120px) 1rem;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
 }
 
 @keyframes aparecer {
@@ -32,68 +35,101 @@
   }
 }
 
-/* 👑 Logo Reina */
-.logo,
-.heroLogo {
-  width: 350px;
-  max-width: 80%;
-  height: auto;
-  margin-bottom: 1.5rem;
-  filter: drop-shadow(0 0 10px #00bfff);
-  transition: transform 0.3s ease;
+/* =============================
+   📝 Contenedor de Texto a la izquierda
+   ============================= */
+.textWrapper {
+  position: absolute;
+  top: 40%;
+  left: 14vw; /* Ajuste visual izquierdo */
+  transform: translateY(-70%);
+  max-width: 580px;
+  z-index: 2;
 }
 
-/* 📝 Título principal */
-.texto h1,
+/* =============================
+   🧩 Título Principal Estilizado
+   ============================= */
 .heroTitle {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin: 0 0 1rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: clamp(3.5rem, 6vw, 5rem);
+  font-weight: 1100;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  line-height: 1.1;
 }
 
-/* 🌈 Palabra destacada */
-.highlight {
-  color: #00bfff;
-}
-
-/* 🧠 Subtítulo */
-.texto p,
+/* =============================
+   ✨ Subtítulo Alineado Profesionalmente
+   ============================= */
 .heroSubtitle {
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  color: #aaa;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  max-width: 600px;
-  margin: 0 auto 2rem;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  margin-top: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  max-width: 100%;
 }
 
-/* 🚀 Botón CTA */
-.boton,
+/* =============================
+   🎨 Colores Destacados del texto
+   ============================= */
+.blanco {
+  color: #ffffff;
+  font-weight: 700;
+}
+.byte {
+  color: #00d4ff;
+  font-weight: 700;
+}
+.destacado {
+  color: #00cfff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =============================
+   🚀 Botón Central con animación
+   ============================= */
+.centerCta {
+  position: absolute;
+  bottom: 60px;
+  left: 40%;
+  transform: translateX(-60%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
 .ctaButton {
-  padding: 12px 28px;
+  padding: 16px 40px;
   font-size: 1rem;
-  border: 2px solid #00bfff;
-  color: white;
-  background-color: transparent;
-  border-radius: 25px;
+  font-weight: 600;
+  border: 2px solid #00d4ff;
+  color: #ffffff;
+  background: transparent;
+  border-radius: 30px;
   text-decoration: none;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
-.boton:hover,
 .ctaButton:hover {
-  background-color: #00bfff;
-  color: #0b0d1a;
-  box-shadow: 0 0 12px #00bfff;
+  background-color: #00d4ff;
+  color: #000;
+  box-shadow: 0 0 16px #00d4ff;
 }
 
-/* 🔽 Flecha scroll */
+/* =============================
+   ⬇️ Flecha animada y texto guía
+   ============================= */
 .flecha {
+  margin-top: 20px;
   font-size: 2rem;
-  margin-top: 1rem;
-  color: #00bfff;
+  color: #00cfff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,18 +137,43 @@
 }
 
 .scrollHint {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #aaa;
-  margin-top: 0.5rem;
-  letter-spacing: 1px;
+  margin-top: 0.4rem;
+  letter-spacing: 0.5px;
+  animation: blinkText 3s infinite;
 }
 
-/* 🐝 Abejas flotantes mejoradas */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes blinkText {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =============================
+   🐝 Animación de Abejas flotantes
+   ============================= */
 .abeja {
   position: absolute;
   width: 70px;
   opacity: 0.85;
-  pointer-events: auto;
+  pointer-events: none;
   animation: float 6s ease-in-out infinite;
   transition: transform 0.3s ease;
 }
@@ -124,22 +185,18 @@
 .topLeft {
   top: 10%;
   left: 5%;
-  animation-delay: 0s;
 }
 .topRight {
   top: 15%;
   right: 5%;
-  animation-delay: 1s;
 }
 .bottomLeft {
   bottom: 10%;
   left: 10%;
-  animation-delay: 2s;
 }
 .bottomRight {
   bottom: 15%;
   right: 10%;
-  animation-delay: 3s;
 }
 .centerLeft {
   top: 45%;
@@ -160,46 +217,41 @@
   }
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
+/* =============================
+   📱 Responsive Mobile View
+   ============================= */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 0 2rem;
+    justify-content: center;
+    background-position:
+      center center,
+      center top;
   }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.1);
-  }
-}
 
-@media (max-width: 480px) {
-  .logo,
-  .heroLogo {
-    width: 150px;
+  .textWrapper {
+    position: static;
+    transform: none;
+    text-align: center;
+    align-items: center;
+    margin-top: 4rem;
   }
 
   .heroTitle {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    justify-content: center;
   }
 
-  .boton,
-  .ctaButton {
-    width: 100%;
-    max-width: 280px;
-    font-size: 0.95rem;
+  .heroSubtitle {
+    font-size: 1.1rem;
+    text-align: center;
   }
 
-  .flecha {
-    font-size: 1.5rem;
+  .abeja {
+    width: 50px;
   }
 
-  .panal-fondo {
-    background-size: 24px;
-  }
-}
-
-/* 🐝 Ocultar abejas centrales y de abajo en móviles */
-@media (max-width: 768px) {
   .centerLeft,
   .centerRight,
   .bottomLeft,
