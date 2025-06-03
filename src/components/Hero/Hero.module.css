@@ -43,6 +43,19 @@
   pointer-events: none;
 }
 
+/* Fallback en móvil */
+.fallbackImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  animation: fadeVideo 1.5s ease-in-out forwards;
+}
+
 /* Animaciones */
 @keyframes aparecerHero {
   to {
@@ -62,7 +75,9 @@
   }
 }
 
-/* Texto principal */
+/* ============================= */
+/*           TEXTO HERO          */
+/* ============================= */
 .textWrapper {
   position: absolute;
   top: 40%;
@@ -81,14 +96,14 @@
   flex-wrap: wrap;
   gap: 0.4rem;
   line-height: 1.1;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* MENOS BRILLO */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .heroSubtitle {
   font-size: clamp(1.2rem, 2.2vw, 1.6rem);
   font-weight: 500;
   color: #ffffff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); /* MENOS BRILLO */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   margin-top: 1rem;
   line-height: 1.5;
   max-width: 100%;
@@ -114,7 +129,9 @@
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-/* CTA */
+/* ============================= */
+/*        BOTÓN CTA HERO         */
+/* ============================= */
 .centerCta {
   position: absolute;
   bottom: 60px;
@@ -156,7 +173,9 @@
   }
 }
 
-/* Flecha animada */
+/* ============================= */
+/*         FLECHA ABAJO          */
+/* ============================= */
 .flecha {
   margin-top: 20px;
   font-size: 2rem;
@@ -198,57 +217,9 @@
   }
 }
 
-/* 🐝 Animaciones opcionales (puedes eliminar esta parte si no las usas) */
-.abeja {
-  position: absolute;
-  width: 70px;
-  opacity: 0.85;
-  pointer-events: none;
-  animation: float 6s ease-in-out infinite;
-  transition: transform 0.3s ease;
-  z-index: 2;
-}
-
-.abeja:hover {
-  transform: scale(1.1) rotate(5deg) translateY(-5px);
-}
-
-.topLeft {
-  top: 10%;
-  left: 5%;
-}
-.topRight {
-  top: 15%;
-  right: 5%;
-}
-.bottomLeft {
-  bottom: 10%;
-  left: 10%;
-}
-.bottomRight {
-  bottom: 15%;
-  right: 10%;
-}
-.centerLeft {
-  top: 45%;
-  left: 5%;
-}
-.centerRight {
-  top: 45%;
-  right: 5%;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-15px) rotate(5deg);
-  }
-}
-
-/* 📱 Responsive */
+/* ============================= */
+/*       RESPONSIVE MOBILE       */
+/* ============================= */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -259,7 +230,7 @@
   }
 
   .videoFondo {
-    object-fit: cover; /* MUY IMPORTANTE PARA MÓVIL */
+    object-fit: cover;
   }
 
   .textWrapper {
@@ -306,19 +277,5 @@
 
   .scrollHint {
     font-size: 0.9rem;
-  }
-
-  .abeja {
-    width: 40px;
-    opacity: 0.6;
-  }
-
-  .centerLeft,
-  .centerRight,
-  .bottomLeft,
-  .bottomRight,
-  .topLeft,
-  .topRight {
-    display: none !important;
   }
 }

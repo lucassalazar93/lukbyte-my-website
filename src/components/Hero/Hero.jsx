@@ -1,10 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Hero.module.css';
-
 import ParticlesFondo from './ParticlesFondo';
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const handleScroll = () => {
     const target = document.querySelector('#servicios');
     if (target) {
@@ -15,27 +23,32 @@ const Hero = () => {
   return (
     <motion.section
       className={styles.hero}
-      initial={{ opacity: 0, y: '-100vh' }} // efecto desde arriba
+      initial={{ opacity: 0, y: '-100vh' }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: 'easeOut' }}
     >
-      {/* 🎥 Video de fondo */}
-      <video
-        className={styles.videoFondo}
-        src="/videos/videoHero.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      {/* ✅ Mostrar video en desktop y fallback en móvil */}
+      {isMobile ? (
+        <img
+          src="/videos/fallback.png"
+          alt="Fondo alternativo de la abeja cibernética"
+          className={styles.fallbackImg}
+        />
+      ) : (
+        <video
+          className={styles.videoFondo}
+          src="/videos/videoHero.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      )}
 
-      {/* 🌫️ Overlay */}
+      {/* Overlay y contenido */}
       <div className={styles.overlay}></div>
-
-      {/* ✨ Partículas */}
       <ParticlesFondo />
 
-      {/* 📝 Título y subtítulo */}
       <motion.div
         className={styles.textWrapper}
         initial={{ opacity: 0, y: 30 }}
@@ -52,7 +65,6 @@ const Hero = () => {
         </p>
       </motion.div>
 
-      {/* 🚀 Botón CTA */}
       <motion.div
         className={styles.centerCta}
         initial={{ opacity: 0, y: 20 }}
