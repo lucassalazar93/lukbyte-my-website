@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <motion.section
       className={styles.hero}
-      initial={{ opacity: 0, y: '-100vh' }} // 👉 entra desde arriba
+      initial={{ opacity: 0, y: '-100vh' }} // efecto desde arriba
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: 'easeOut' }}
     >
@@ -29,13 +29,13 @@ const Hero = () => {
         playsInline
       />
 
-      {/* 🌫️ Overlay visual */}
+      {/* 🌫️ Overlay */}
       <div className={styles.overlay}></div>
 
       {/* ✨ Partículas */}
       <ParticlesFondo />
 
-      {/* 📝 Texto */}
+      {/* 📝 Título y subtítulo */}
       <motion.div
         className={styles.textWrapper}
         initial={{ opacity: 0, y: 30 }}
