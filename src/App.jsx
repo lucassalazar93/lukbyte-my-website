@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToSection from './utils/ScrollToSection';
 
-// 🔥 Hotjar para mapas de calor
+// 🔥 Mapas de calor
 import HotjarInitializer from './utils/HotjarInitializer';
 
 // 🐝 Elementos globales
@@ -30,7 +30,7 @@ import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
 import Nosotros from './pages/Nosotros';
 import Agendar from './pages/Agendar';
 
-// 🦶 Pie de página profesional
+// 🦶 Pie de página
 import Footer from './components/Footer/Footer';
 
 function Home() {
@@ -64,7 +64,7 @@ function Home() {
 function App() {
   return (
     <Router>
-      <HotjarInitializer /> {/* ✅ Carga Hotjar en toda la app */}
+      <HotjarInitializer />
       <AbejaSeguidora />
       <Navbar />
       <main>
