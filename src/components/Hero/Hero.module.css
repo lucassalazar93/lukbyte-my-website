@@ -133,14 +133,23 @@
 /*        BOTÓN CTA HERO         */
 /* ============================= */
 .centerCta {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 2;
+  position: absolute; /* Posiciona el botón respecto al contenedor padre con posición relativa (el .hero) */
+
+  bottom: 40px; /* Lo ubica a 60px desde el borde inferior del contenedor */
+
+  left: 40%; /* Lo mueve hacia el centro horizontal del contenedor (desde el borde izquierdo) */
+
+  transform: translateX(
+    -50%
+  ); /* Lo traslada hacia la izquierda el 50% de su propio ancho para centrarlo horizontalmente */
+
+  display: flex; /* Usa Flexbox para alinear el botón y el texto de forma vertical */
+
+  flex-direction: column; /* Apila los elementos hijos (el botón y la flecha) uno debajo del otro */
+
+  align-items: center; /* Centra horizontalmente los elementos hijos dentro del contenedor */
+
+  z-index: 2; /* Lo posiciona por encima del video y el fondo, asegurando visibilidad */
 }
 
 .ctaButton {

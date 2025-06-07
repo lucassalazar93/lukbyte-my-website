@@ -61,13 +61,14 @@ Me gustaría agendar una asesoría gratuita para conocer cómo funciona y qué b
           </p>
           <div className="cta-hero">
             <a
-              href={whatsappLink}
+              href="http://localhost:5173/agendar"
+              className="btn-secundario"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primario"
             >
-              Agendar asesoría
+              📅 Agendar una asesoría
             </a>
+
             <a href="#ejemplos-pwa" className="btn-secundario">
               Ver ejemplos
             </a>

@@ -58,12 +58,12 @@ const InvitacionesDigitales = () => {
               Solicitar demo gratuita
             </a>
             <a
-              href={`https://wa.me/${whatsappNumber}?text=${asesoriaMessage}`}
+              href="http://localhost:5173/agendar"
               className="btn-secundario"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Agendar asesoría
+              📅 Agendar una asesoría
             </a>
           </div>
         </div>

@@ -54,13 +54,14 @@ Me gustaría agendar un diagnóstico gratuito para identificar oportunidades de 
           </p>
           <div className="cta-hero">
             <a
-              href={whatsappLink}
+              href="http://localhost:5173/agendar"
+              className="btn-secundario"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primario"
             >
-              Agendar diagnóstico gratuito
+              📅 Agendar una asesoría Gratis
             </a>
+
             <a href="#casos-api" className="btn-secundario">
               Ver casos de uso
             </a>

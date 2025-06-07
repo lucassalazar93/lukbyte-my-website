@@ -21,6 +21,7 @@ import BioLinks from './pages/servicios/BioLinks';
 
 // 🎯 Secciones principales
 import Hero from './components/Hero';
+import SeccionGancho from './components/Gancho/SeccionGancho'; // 💡 NUEVA sección
 import Servicios from './components/Servicios/Servicios';
 import Elegirnos from './components/Elegirnos/Elegirnos';
 import Proyectos from './components/Proyectos/Proyectos';
@@ -40,6 +41,11 @@ function Home() {
 
       <section id="inicio">
         <Hero />
+      </section>
+
+      {/* 🚨 NUEVO GANCHO DE CONVERSIÓN */}
+      <section id="oferta-limitada">
+        <SeccionGancho />
       </section>
 
       <section id="servicios">

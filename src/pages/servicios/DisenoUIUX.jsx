@@ -58,13 +58,14 @@ export default function DisenoUIUX() {
           </p>
           <div className="uiux-hero-buttons">
             <a
-              className="btn-principal"
-              href={`https://wa.me/${whatsapp}?text=${mensajeAsesoria}`}
+              href="http://localhost:5173/agendar"
+              className="btn-secundario"
               target="_blank"
               rel="noopener noreferrer"
             >
-              🎨 Agendar asesoría de diseño
+              📅 Agendar una asesoría
             </a>
+
             <a className="btn-secundario" href="/servicios/ejemplos#uiux">
               🔍 Ver ejemplos
             </a>
@@ -206,12 +207,12 @@ export default function DisenoUIUX() {
             Quiero una interfaz que impacte
           </a>
           <a
-            href={`https://wa.me/${whatsapp}?text=${mensajeAsesoria}`}
+            href="http://localhost:5173/agendar"
+            className="btn-secundario"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-secundario"
           >
-            Agendar asesoría gratuita
+            📅 Agendar una asesoría Gratis
           </a>
         </div>
       </section>

@@ -1,6 +1,6 @@
+// DesarrolloWeb.jsx
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom'; // ✅ ESTE IMPORT ES CLAVE
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 
@@ -69,9 +69,15 @@ export default function DesarrolloWeb() {
               🔍 Ver ejemplos
             </a>
 
-            <Link to="/agendar" className="btn-secundario">
-              📅 Agendar una asesoría
-            </Link>
+            {/* 🚨 Aquí va el cambio */}
+            <a
+              href="http://localhost:5173/agendar"
+              className="btn-secundario"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📅 Asesoria Gratis
+            </a>
           </div>
         </div>
 
@@ -220,15 +226,15 @@ export default function DesarrolloWeb() {
             rel="noreferrer"
             className="btn-principal"
           >
-            💬 Solicitar demo gratuita
+            💬 Demo gratuita
           </a>
           <a
-            href={`https://wa.me/${whatsapp}?text=${asesoriaMessage}`}
-            target="_blank"
-            rel="noreferrer"
+            href="http://localhost:5173/agendar"
             className="btn-secundario"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            📅 Agendar asesoría
+            📅 Agendar una asesoría
           </a>
         </div>
       </section>

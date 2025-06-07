@@ -19,6 +19,7 @@
     "date-fns": "^4.1.0",
     "flatpickr": "^4.6.13",
     "framer-motion": "^12.11.3",
+    "lottie-react": "^2.4.1",
     "lukbyte-frontend": "file:",
     "react": "^19.1.0",
     "react-confetti": "^6.4.0",
