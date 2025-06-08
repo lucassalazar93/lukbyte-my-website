@@ -36,7 +36,7 @@ const SeccionGancho = () => {
   };
 
   return (
-    <section className="seccion-gancho-nivel-dios">
+    <section id="regalo" className="seccion-gancho-nivel-dios">
       <img src={abeja} className="abeja-api mid-right" alt="abeja decorativa" />
 
       {showConfetti && (

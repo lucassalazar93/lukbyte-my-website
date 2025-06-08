@@ -14,10 +14,14 @@ const Hero = () => {
   }, []);
 
   const handleScroll = () => {
-    const target = document.querySelector('#servicios');
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    setTimeout(() => {
+      const target = document.getElementById('regalo');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        console.warn('⚠️ No se encontró la sección con ID "regalo".');
+      }
+    }, 100); // Espera para asegurar que el DOM ya esté pintado
   };
 
   return (
@@ -27,7 +31,7 @@ const Hero = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, ease: 'easeOut' }}
     >
-      {/* ✅ Mostrar video en desktop y fallback en móvil */}
+      {/* ✅ Video de fondo o imagen fallback */}
       {isMobile ? (
         <img
           src="/videos/fallback.png"
@@ -45,10 +49,11 @@ const Hero = () => {
         />
       )}
 
-      {/* Overlay y contenido */}
+      {/* Overlay y partículas */}
       <div className={styles.overlay}></div>
       <ParticlesFondo />
 
+      {/* Título y subtítulo */}
       <motion.div
         className={styles.textWrapper}
         initial={{ opacity: 0, y: 30 }}
@@ -65,6 +70,7 @@ const Hero = () => {
         </p>
       </motion.div>
 
+      {/* CTA */}
       <motion.div
         className={styles.centerCta}
         initial={{ opacity: 0, y: 20 }}
@@ -72,7 +78,7 @@ const Hero = () => {
         transition={{ delay: 1 }}
       >
         <button onClick={handleScroll} className={styles.ctaButton}>
-          Descubrir nuestros servicios
+          Reclamar mi regalo gratuito 🎁
         </button>
         <div className={styles.flecha}>
           <span>▼</span>
