@@ -100,7 +100,6 @@
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.35);
 }
 
-/* Animación flotante */
 @keyframes flotar {
   0% {
     transform: translateY(-4px);
@@ -113,36 +112,31 @@
   }
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .contador-impactante {
     font-size: 2.4rem;
     letter-spacing: 2px;
   }
-
   .titulo-impactante {
     font-size: 2rem;
   }
-
   .subtitulo {
     font-size: 1.4rem;
   }
-
   .descripcion-gancho {
     font-size: 1rem;
     padding: 0 15px;
   }
-
   .btn-primario {
     padding: 12px 24px;
     font-size: 1rem;
   }
-
   .abeja-api.mid-right {
     display: none;
   }
 }
 
+/* 🎉 Confeti visual */
 .lottie-confetti {
   position: fixed;
   top: 0;
@@ -153,6 +147,7 @@
   z-index: 9999;
 }
 
+/* 💡 Recordatorio */
 .popup-recordatorio {
   position: fixed;
   bottom: 90px;
@@ -167,4 +162,138 @@
   z-index: 9999;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
   animation: flotar 3s infinite;
+}
+
+/* 📋 Formulario */
+.form-suscripcion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.form-suscripcion input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.form-suscripcion button {
+  padding: 12px;
+  border-radius: 8px;
+  background: #00d2ff;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.mensaje-exito {
+  margin-top: 10px;
+  color: #00ff9c;
+  font-weight: 600;
+}
+
+/* 🎯 MODAL ÉXITO */
+.gracias-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.gracias-card {
+  position: relative;
+  background: rgba(0, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(18px); /* Compatibilidad iOS/Safari */
+  backdrop-filter: blur(18px); /* Estándar moderno */
+  border-radius: 24px;
+  padding: 2.2rem 2rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 0 50px #00f0ff44;
+  color: #fff;
+  max-width: 390px;
+  width: 90%;
+  animation: vibrar 1.5s infinite alternate ease-in-out;
+}
+
+.gracias-card h2 {
+  font-size: 2rem;
+  color: #00f0ff;
+  margin-bottom: 1rem;
+}
+
+.gracias-card p {
+  font-size: 1rem;
+  margin-bottom: 1.8rem;
+  color: #cdefff;
+  line-height: 1.6;
+  padding: 0 6px;
+}
+
+.gracias-card button {
+  background: #00f0ff;
+  color: #000;
+  font-weight: bold;
+  padding: 0.8rem 1.4rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.gracias-card button:hover {
+  background: #0fffc1;
+  box-shadow: 0 0 15px #0fffc1;
+}
+
+/* ❌ Botón de cerrar */
+.cerrar-x {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #ffffffcc;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cerrar-x:hover {
+  transform: scale(1.2);
+  color: #ffffff;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes vibrar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
