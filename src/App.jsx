@@ -7,7 +7,7 @@ import HotjarInitializer from './utils/HotjarInitializer';
 
 // 🐝 Elementos globales
 import AbejaSeguidora from './components/AbejaSeguidora/AbejaSeguidora';
-import WidgetWhatsApp from './components/WidgetWhatsApp';
+import CodyChat from './components/CodyChat'; // ✅ NUEVO
 
 // 🧭 Navegación principal
 import Navbar from './components/Navbar/Navbar';
@@ -21,7 +21,7 @@ import BioLinks from './pages/servicios/BioLinks';
 
 // 🎯 Secciones principales
 import Hero from './components/Hero';
-import SeccionGancho from './components/Gancho/SeccionGancho'; // 💡 NUEVA sección
+import SeccionGancho from './components/Gancho/SeccionGancho';
 import Servicios from './components/Servicios/Servicios';
 import Elegirnos from './components/Elegirnos/Elegirnos';
 import Proyectos from './components/Proyectos/Proyectos';
@@ -43,7 +43,6 @@ function Home() {
         <Hero />
       </section>
 
-      {/* 🚨 NUEVO GANCHO DE CONVERSIÓN */}
       <section id="oferta-limitada">
         <SeccionGancho />
       </section>
@@ -89,7 +88,10 @@ function App() {
           <Route path="/agendar" element={<Agendar />} />
         </Routes>
       </main>
-      <WidgetWhatsApp />
+
+      {/* ✅ CodyChat fijo para todas las páginas */}
+      <CodyChat />
+
       <Footer />
     </Router>
   );
